@@ -1,9 +1,5 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
-const express = require("express");
-const routes = require("./routes");
+import express from "express";
+import routes from "./routes";
 
 // App
 const app = express();

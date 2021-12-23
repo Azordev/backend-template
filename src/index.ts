@@ -1,11 +1,12 @@
 import express from "express";
 import routes from "./routes";
+import useMiddlewares from "./middlewares";
 
 // App
 const app = express();
 
 // Middlewares
-app.use(express.json());
+useMiddlewares(app);
 
 // Routes
 app.use("/", routes);

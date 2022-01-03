@@ -15,9 +15,7 @@ about: It is a necessary task to do in the project
 
  This issue can be closed when the following tasks are complete:
  
- - [ ] Form is validating if email exists
- - [ ] Submit button don't work when email is invalid or already exist
- - [ ] Show error in the form 
+ - [ ] Test `npm test` have passed ✔
  
 ### References
  If applicable, add documentation references

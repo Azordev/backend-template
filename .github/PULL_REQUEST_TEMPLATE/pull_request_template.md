@@ -27,8 +27,6 @@ If applicable, describe the tests that you ran to verify your changes. Provide i
 
 ### Checklist:
 
-- [ ] Doesn't break the current code.
-- [ ] Passes linters and test, also is building.
-- [ ] Doesn't have spelling or grammatical problems.
-- [ ] Doesn't have unnecessary comments or debugging code.
-- [ ] The branch is updated with the last dev branch changes.
+ Add here the checklist of the issue 
+
+ - [ ] Test `npm test` have passed ✔

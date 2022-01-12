@@ -27,6 +27,6 @@ If applicable, describe the tests that you ran to verify your changes. Provide i
 
 ### Checklist:
 
- Add here the checklist of the issue 
+Add here the checklist of the issue
 
- - [ ] Test `npm test` have passed ✔
+- [ ] Test `npm test` have passed ✔

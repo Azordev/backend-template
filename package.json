@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon --require dotenv/config dist/index.js \"",
+    "lint": "eslint src --cache",
+    "lint-fix": "eslint src --cache --fix",
     "prepare": "husky install"
   },
   "repository": {

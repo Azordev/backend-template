@@ -1,6 +1,7 @@
 import express from "express";
 import routes from "./routes";
 import useMiddlewares from "./middlewares";
+import logger from "./utils/logger";
 
 // App
 const app = express();
@@ -16,5 +17,5 @@ const port = process.env.PORT || 3000;
 
 // Server
 app.listen(port, () => {
-  console.log("Server is running on port " + port);
+  logger.info("Server is running on port %s", port);
 });

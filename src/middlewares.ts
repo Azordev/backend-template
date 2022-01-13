@@ -1,6 +1,16 @@
-import express from "express";
+import express, { Express } from "express";
+import morgan from "morgan";
+import logger from "./utils/logger";
 
-const useMiddlewares = (app) => {
+const useMiddlewares = (app: Express) => {
+  app.use(
+    morgan("short", {
+      stream: {
+        write: (message) => logger.http(message.trim()),
+      },
+    })
+  );
+
   app.use(express.json());
 };
 

@@ -6,7 +6,7 @@ const useMiddlewares = (app: Express) => {
   app.use(
     morgan("short", {
       stream: {
-        write: (message) => logger.http(message.trim()),
+        write: (message) => logger.http(message),
       },
     })
   );

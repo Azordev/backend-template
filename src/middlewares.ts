@@ -1,6 +1,6 @@
-import express from "express";
+import express, { Application } from "express";
 
-const useMiddlewares = (app) => {
+const useMiddlewares = (app: Application) => {
   app.use(express.json());
 };
 

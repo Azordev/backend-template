@@ -1,21 +1,10 @@
-import { Sequelize } from "sequelize";
+import { Pool } from "pg";
 
-export const sequelize = new Sequelize({
-  database: process.env.DB_NAME,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
+export const pool = new Pool({
+  user: process.env.DB_USER,
   host: process.env.DB_HOST,
-  dialect: "postgres",
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   port: 5432,
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
-    },
-  },
-  pool: {
-    max: 5,
-    min: 0,
-  },
-  logging: false,
+  ssl: true,
 });

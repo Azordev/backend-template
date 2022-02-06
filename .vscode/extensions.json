@@ -1,8 +1,9 @@
 {
   "recommendations": [
-    "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "streetsidesoftware.code-spell-checker-spanish"
+    "streetsidesoftware.code-spell-checker-spanish",
+    "orta.vscode-jest"
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en,es",
+  "words": [
+    "azordev",
+    "commitlint",
+    "expressjs",
+    "interation",
+    "maxsize",
+    "micropayment",
+    "middlewares",
+    "wiston"
+  ],
+  "flagWords": [
+    "hte"
+  ],
+  "ignorePaths": [
+    "./.github/**",
+    "./.vscode/**",
+    "./.dist/**",
+    "node_modules/**",
+    "package.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock"
+  ]
+}

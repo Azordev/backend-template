@@ -1,6 +1,50 @@
 {
+  "cSpell.language": "en",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "liveshare.languages.allowGuestCommandControl": true,
+  "telemetry.telemetryLevel": "crash",
+  "emmet.excludeLanguages": [],
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "markdown": "html",
+  },
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/node_modules": true,
+  },
+  "search.exclude": {
+    "build": true,
+    "logs": true,
+    "coverage": true,
+    "**/node_modules": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "editor.bracketPairColorization.enabled": true,
+  "javascript.suggest.autoImports": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.acceptSuggestionOnEnter": "off"
+  },
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true
+  "jest.autoRun": {
+    "watch": false,
+    "onSave": "test-file"
+  },
 }

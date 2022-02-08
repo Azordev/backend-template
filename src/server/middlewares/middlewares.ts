@@ -1,7 +1,7 @@
 import compression from 'compression'
 import cors from 'cors'
 import errorHandler from 'errorhandler'
-import express, { NextFunction, Request, Response } from 'express'
+import express, { NextFunction, Request, Response, Application } from 'express'
 import helmet from 'helmet'
 import methodOverride from 'method-override'
 import morgan from 'morgan'
@@ -10,7 +10,7 @@ import logger, { stream } from '../../lib/logger'
 import { globalEnv } from '../app'
 import { corsOption, originUndefined } from './cors'
 
-const middlewares = (app: Express.Application) => {
+const middlewares = (app: Application) => {
   const isProduction = globalEnv.isProductionEnvironment()
 
   // Enable if you're behind a reverse proxy (Heroku in our case)

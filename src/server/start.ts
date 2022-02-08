@@ -18,7 +18,7 @@ const start = (app: Express.Application) => {
   logger.info(`                                                                                    
  /\\ _  _  _ _| _   
 /--\\/_(_)| (_|(-\\/
-        `)
+  `)
 
   logger.info(`App listening on http://localhost:${httpPort}/ping`)
 

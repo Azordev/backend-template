@@ -32,7 +32,7 @@ const logger: Logger = addCategory.add('default', {
     }),
   ),
   transports: [new transports.Console()],
-  exitOnError: true,
+  exitOnError: false,
 })
 
 export const debug = addCategory.add('error', {
@@ -47,7 +47,7 @@ export const debug = addCategory.add('error', {
   exceptionHandlers: [
     new transports.File({
       filename: `${logDir}/exceptions.log`,
-      maxsize: 1024000, // 1MB
+      maxsize: 5242880, // 1MB
       maxFiles: 5,
     }),
   ],

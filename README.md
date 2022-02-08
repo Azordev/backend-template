@@ -144,10 +144,10 @@ Requests are authenticated using the `Authorization` header with a valid JWT. We
 
 # Collaborators
 
-|   [Israel Laguan][author-github]    | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
+|   [Israel Laguan][author-github]    | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my LinkedIn][author-linkedin] |
 | :---------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
 |           ![author-pic][]           | ![banner][]                                                                                                                         |
-|    [Victor Peña][victor-github]     | ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]  |
+|    [Victor Peña][victor-github]     | ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my LinkedIn][victor-linkedin]  |
 |           ![victor-pic][]           |                                                                                                                                     |
 | [Emmanuel Azócar][emmanuel-github]  |![email-icon][] Email me to [azocarmel@gmail.com][emmanuel-email]                                                                    |
 |          ![emmanuel-pic][]          |                                                                                                                                     |
@@ -170,7 +170,7 @@ https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
 https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
 https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
 https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
-https://github.com/cham11ng/typescript-api-starter // Have migrations with postgres
+https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
 https://caddyserver.com/docs/running
 https://github.com/PW486/express-ts-starter // Have docker conf
 

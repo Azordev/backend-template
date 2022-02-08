@@ -2,6 +2,7 @@
 build
 dist
 coverage
-
+logs
 .gitignore
+.eslitignore
 .prettierignore

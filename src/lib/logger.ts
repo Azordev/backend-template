@@ -47,14 +47,14 @@ export const debug = addCategory.add('error', {
   exceptionHandlers: [
     new transports.File({
       filename: `${logDir}/exceptions.log`,
-      maxsize: 5242880, // 1MB
+      maxsize: 5242880, // 5MB
       maxFiles: 5,
     }),
   ],
 })
 
 export const stream = {
-  write: (message) => {
+  write: (message: string) => {
     logger.info(message)
   },
 }

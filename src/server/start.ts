@@ -1,15 +1,15 @@
-import http from 'http'
+import http, { RequestListener } from 'http'
 import https from 'https'
 import logger, { debug } from '../lib/logger'
 import { globalEnv } from './app'
 
-const boot = (app) => {
+const start = (app: Express.Application) => {
   const { port, portHttps, isProductionEnvironment } = globalEnv
   const httpPort = normalizePort(port)
   const httpsPort = normalizePort(portHttps)
 
   http
-    .createServer(app)
+    .createServer(app as unknown as RequestListener)
     .listen(httpPort)
     .on('error', onError)
     .on('listening', onListening)
@@ -32,7 +32,7 @@ const boot = (app) => {
     }
 
     https
-      .createServer(options, app)
+      .createServer(options, app as unknown as RequestListener)
       .listen(httpsPort)
       .on('error', onError)
       .on('listening', onListening)
@@ -41,8 +41,8 @@ const boot = (app) => {
   /**
    * Normalize a port into a number, string, or false.
    */
-  function normalizePort(val) {
-    const port = parseInt(val, 10)
+  function normalizePort(val: string | number) {
+    const port = typeof val === 'string' ? parseInt(val, 10) : val
 
     if (isNaN(port)) {
       // named pipe
@@ -60,7 +60,7 @@ const boot = (app) => {
   /**
    * Event listener for HTTP server "error" event.
    */
-  function onError(error) {
+  function onError(error: { syscall: string; code: string }) {
     if (error.syscall !== 'listen') {
       throw error
     }
@@ -94,4 +94,4 @@ const boot = (app) => {
   }
 }
 
-export default boot
+export default start

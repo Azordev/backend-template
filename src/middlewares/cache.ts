@@ -1,19 +1,22 @@
+import { NextFunction, Request, Response } from 'express'
 import memoryCache from 'memory-cache'
 
 const memCache = new memoryCache.Cache()
-const cache = (duration) => {
-  return (req, res, next) => {
+const cache = (duration: number) => {
+  return (req: Request, res: Response, next: NextFunction) => {
     const key = '__express__' + req.originalUrl || req.url
     const cacheContent = memCache.get(key)
 
     if (cacheContent) {
       res.send(cacheContent)
     } else {
-      res.sendResponse = res.send
+      const resSendCopy = res.send
 
-      res.send = (body) => {
+      res.send = (
+        body: typeof res.send,
+      ): Response<any, Record<string, any>> => {
         memCache.put(key, body, duration * 1000)
-        res.sendResponse(body)
+        return resSendCopy(body)
       }
 
       next()

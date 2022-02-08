@@ -1,3 +1,9 @@
+import { Response } from 'express'
+import { StatusCodes } from 'http-status-codes'
+import { encrypt } from '../../lib/crypto'
+import logger from '../../lib/logger'
+import { globalEnv } from '../../server/app'
+
 export const responses = {
   200: {
     success: true,
@@ -39,7 +45,7 @@ export const responses = {
       {
         url: 'https://www.flickr.com/photos/girliemac/6547319943/in/album-72157628409467125/',
         description:
-          'The 204 status code is usually sent out in response to a PUT, POST, or DELETE request when the REST API declines to send back any status message or representation in the response message’s body.',
+          "The 204 status code is usually sent out in response to a PUT, POST, or DELETE request when the REST API declines to send back any status message or representation in the response message's body.",
       },
     ],
   },
@@ -133,7 +139,22 @@ export const responses = {
   },
 }
 
-const sendResponse = (res, statusCode, data = [], msg = '') => {
+const sendResponse = (
+  res: Response,
+  statusCode: StatusCodes,
+  data = [],
+  msg = '',
+  encryptData = false,
+) => {
+  const { isProductionEnvironment, applyEncryption, secretKey } = globalEnv
+
+  if (!isProductionEnvironment()) {
+    logger.info(JSON.stringify(data, null, 2))
+  }
+  if (data.length > 0 && encryptData && applyEncryption) {
+    data = [{ encrypted: encrypt(JSON.stringify(data), secretKey) }]
+  }
+
   res.status(statusCode).json({
     ...responses[statusCode],
     msg: msg.length > 0 ? msg : responses[statusCode].msg,

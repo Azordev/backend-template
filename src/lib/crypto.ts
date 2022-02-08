@@ -1,5 +1,5 @@
 import * as crypto from 'crypto'
-import fs from 'fs'
+import { globalEnv } from 'server/app'
 
 // algorithm - AES 256 GCM Mode
 const algorithm = 'aes-256-gcm'
@@ -17,10 +17,9 @@ const digest = 'sha512'
 const salt = crypto.randomBytes(64)
 
 export const generateSecretKey = (): string => {
-  const privateKey =
-    fs.readFileSync('./azordev-RS256.key', 'utf8') || process.env.SECRET_KEY
+  const { secretKey } = globalEnv
   const key = crypto.pbkdf2Sync(
-    privateKey,
+    secretKey,
     salt, // salt is a random string of 64 bytes
     iterations, // number of iterations
     keylen, // key length

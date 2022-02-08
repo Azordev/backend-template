@@ -1,6 +1,6 @@
 {
   "name": "azordev-backend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Template for backends with NodeJS + Express, ready to use in production!",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,6 @@
     "lefthook": "lefthook run lint"
   },
   "dependencies": {
-    "bcryptjs": "~2.4.3",
-    "body-parser": "~1.19.1",
     "compression": "~1.7.4",
     "cors": "~2.8.5",
     "errorhandler": "~1.5.1",

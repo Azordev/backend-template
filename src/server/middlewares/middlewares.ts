@@ -1,7 +1,7 @@
-import bodyParser from 'body-parser'
 import compression from 'compression'
 import cors from 'cors'
 import errorHandler from 'errorhandler'
+import express, { NextFunction, Request, Response } from 'express'
 import helmet from 'helmet'
 import methodOverride from 'method-override'
 import morgan from 'morgan'
@@ -10,7 +10,7 @@ import logger, { stream } from '../../lib/logger'
 import { globalEnv } from '../app'
 import { corsOption, originUndefined } from './cors'
 
-const middlewares = (app) => {
+const middlewares = (app: Express.Application) => {
   const isProduction = globalEnv.isProductionEnvironment()
 
   // Enable if you're behind a reverse proxy (Heroku in our case)
@@ -32,11 +32,11 @@ const middlewares = (app) => {
   )
 
   app.use(compression())
-  app.use(bodyParser.json({ type: 'application/vnd.api+json', limit: '5mb' }))
-  app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }))
+  app.use(express.json({ type: 'application/vnd.api+json', limit: '5mb' }))
+  app.use(express.urlencoded({ limit: '5mb', extended: true }))
   app.use(methodOverride('X-HTTP-Method-Override'))
 
-  app.use((req, res, next) => {
+  app.use((req: Request, res: Response, next: NextFunction) => {
     if (
       isProduction &&
       !(req.secure || req.headers['x-forwarded-proto'] === 'https')
@@ -52,13 +52,13 @@ const middlewares = (app) => {
   if (!isProduction) {
     app.use(
       errorHandler({
-        log: (err, str, req) =>
+        log: (err: { msg: string }, str: string, req: Request) =>
           logger.error(`Error in ${req.method} ${req.url}`, str, err.msg),
       }),
     )
   }
 
-  app.get('*', function (req, _res, next) {
+  app.get('*', function (req: Request, _res: Response, next: NextFunction) {
     if (!isProduction) {
       logger.info(`Request: ${req.method} http://${req.headers.host}${req.url}`)
     }

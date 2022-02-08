@@ -1,6 +1,6 @@
-import server from './app'
-import api from '../routes'
+import app from './app'
+import api from '../api'
 import start from './start'
-const withAPI = api(server)
+const withAPI = api(app)
 
 start(withAPI)

@@ -1,8 +1,12 @@
-import { NextFunction } from 'express'
+import { NextFunction, Request, Response } from 'express'
 import { debug } from '../../lib/logger'
 import { globalEnv } from '../app'
 
-export const originUndefined = (req, _, next) => {
+export const originUndefined = (
+  req: Request,
+  _: Response,
+  next: NextFunction,
+) => {
   const { productionURL } = globalEnv
 
   if (!req.headers.origin) {
@@ -35,7 +39,7 @@ export const corsOption = (
   if (productionURL) allowedOrigins.push(productionURL)
 
   return {
-    origin: (origin, next: NextFunction) => {
+    origin: (origin: string, next: NextFunction) => {
       if (
         isTestEnvironment ||
         isDevEnvironment ||

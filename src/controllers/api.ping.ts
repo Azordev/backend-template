@@ -1,9 +1,9 @@
+import { Request, Response } from 'express'
 import { appInformation } from './utils/systemInfo'
 import send from './utils/responses'
-import { Response } from 'express'
 
-export default (_req, res: Response) => {
+export default (_req: Request, res: Response) => {
   const information = appInformation() || {}
 
-  send(res, 200, [{ ...information, uptime: process.uptime(), ping: 'PONG!' }])
+  send(res, 200, [{ ...information, ping: 'PONG!' }])
 }

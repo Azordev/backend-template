@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
 import fs from 'fs'
-import responses from '../../controllers/utils/responses'
+import { NextFunction, Request, Response } from 'express'
+import sendResponse from '../controllers/utils/responses'
 
 const privateKey =
   fs.readFileSync('./azordev-RS256.key', 'utf8') || process.env.SECRET_KEY
@@ -22,7 +23,10 @@ export const createToken = (
   return token
 }
 
-export const verifyToken = (token, signOptions = { algorithm: 'RS256' }) => {
+export const verifyToken = (
+  token: string | string[],
+  signOptions = { algorithm: 'RS256' },
+) => {
   const signOptionsWithDefaults = { ...defaultSignOptions, ...signOptions }
 
   try {
@@ -34,33 +38,31 @@ export const verifyToken = (token, signOptions = { algorithm: 'RS256' }) => {
   }
 }
 
-export const decodeToken = (token) => {
+export const decodeToken = (token: string) => {
   const decoded = jwt.decode(token, { complete: true })
 
   return decoded // returns null if token is invalid
 }
 
-export const authenticate = (req, res, next) => {
-  const { authorization } = req.headers
+export const authenticate = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const { headers } = req
+  const token = headers['x-access-token']
 
-  if (!authorization) {
-    return res.status(401).json({
-      ...responses[401],
-      message: 'No authorization token provided.',
-    })
+  if (!token) {
+    return sendResponse(res, 401, [], 'No authorization token provided.')
   }
 
-  const token = authorization.split(' ')[1]
   const verified = verifyToken(token)
 
   if (!verified) {
-    return res.status(401).json({
-      ...responses[401],
-      message: 'Invalid authorization token.',
-    })
+    return sendResponse(res, 401, [], 'Invalid authorization token.')
   }
 
-  req.user = verified
+  res.locals.user = verified
 
   next()
 }

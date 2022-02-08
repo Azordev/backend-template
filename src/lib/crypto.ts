@@ -1,5 +1,4 @@
 import * as crypto from 'crypto'
-import { globalEnv } from 'server/app'
 
 // algorithm - AES 256 GCM Mode
 const algorithm = 'aes-256-gcm'
@@ -17,7 +16,7 @@ const digest = 'sha512'
 const salt = crypto.randomBytes(64)
 
 export const generateSecretKey = (): string => {
-  const { secretKey } = globalEnv
+  const secretKey = process.env.SECRET_KEY || 'AzordevSecretKey'
   const key = crypto.pbkdf2Sync(
     secretKey,
     salt, // salt is a random string of 64 bytes

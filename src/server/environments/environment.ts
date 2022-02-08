@@ -4,11 +4,12 @@ import * as path from 'path'
 import { EnvironmentFile, Environments } from './environment.constant'
 import Environment from './environment.interface'
 import { generateSecretKey } from '../../lib/crypto'
+import { name, version, description } from '../../../package.json'
 
 const Environment: Environment = (env = 'local') => {
-  const appName = process.env.APP_NAME || 'azordev'
-  const description = process.env.APP_DESCRIPTION || 'Server Backend'
-  const version = process.env.APP_VERSION || '1.0.0'
+  const appName = name || 'azordev-backend'
+  const appDescription = description || 'Server Backend'
+  const appVersion = version || '0.1.0'
   const port = Number(process.env.PORT) || 8000
   const portHttps = Number(process.env.PORT_HTTPS) || 443
   const secretKey: string = generateSecretKey()
@@ -25,6 +26,8 @@ const Environment: Environment = (env = 'local') => {
     case Environments.TEST:
       envPath = path.resolve(rootPath, EnvironmentFile.TEST)
       break
+    case Environments.DEV:
+    case Environments.QA:
     case Environments.STAGING:
       envPath = path.resolve(rootPath, EnvironmentFile.STAGING)
       break
@@ -51,10 +54,10 @@ const Environment: Environment = (env = 'local') => {
     switch (environment) {
       case Environments.PRODUCTION:
         return Environments.PRODUCTION
-      case Environments.DEV:
       case Environments.TEST:
-      case Environments.QA:
         return Environments.TEST
+      case Environments.DEV:
+      case Environments.QA:
       case Environments.STAGING:
         return Environments.STAGING
       case Environments.LOCAL:
@@ -78,8 +81,8 @@ const Environment: Environment = (env = 'local') => {
 
   return {
     appName,
-    description,
-    version,
+    appDescription,
+    appVersion,
     port,
     portHttps,
     secretKey,

@@ -3,8 +3,10 @@ module.exports = {
     {
       name: 'azordev-server',
       script: './build/server/index.js',
-      instances: '-1',
+      max_memory_restart: `${process.env.WEB_MEMORY || 512}M`,
+      instances: process.env.WEB_CONCURRENCY || -1,
       exec_mode: 'cluster',
+      source_map_support: false,
     },
   ],
 }

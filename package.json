@@ -6,8 +6,8 @@
   "scripts": {
     "start": "pm2-runtime start ./ecosystem.config.js --env production",
     "build": "tsc -p .",
-    "dev": "NODE_ENV=development tsnd --respawn -r tsconfig-paths/register -r dotenv/config src/server/index.ts",
-    "dev:dash": "NODE_ENV=development nodejs-dashboard -- ts-node-dev -r tsconfig-paths/register -r dotenv/config -r nodejs-dashboard src/server/index.ts",
+    "dev": "tsnd --respawn -r tsconfig-paths/register -r dotenv/config src/server/index.ts",
+    "dev:dash": "nodejs-dashboard -- ts-node-dev -r tsconfig-paths/register -r dotenv/config -r nodejs-dashboard src/server/index.ts",
     "preinstall": "chmod +x ./.create_keys.sh && ./.create_keys.sh",
     "postinstall": "npm run lefthook && npm run build",
     "test:watch": "jest --watch -w=100%",
@@ -63,9 +63,10 @@
     "eslint-config-nfour": "~2.2.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-config-standard": "~16.0.3",
+    "eslint-config-standard-typescript-prettier": "~5.0.0",
     "eslint-plugin-import": "~2.24.0",
     "eslint-plugin-node": "~11.1.0",
-    "eslint-plugin-prettier": "~4.0.0",
+    "eslint-plugin-prettier": "~3.4.1",
     "eslint-plugin-promise": "~5.1.0",
     "jest": "~27.5.0",
     "nodejs-dashboard": "~0.5.1",
@@ -87,7 +88,7 @@
     "backend",
     "eslint",
     "middlewares",
-    "API",
+    "api",
     "pm2",
     "vscode"
   ],
@@ -97,9 +98,21 @@
     "url": "https://github.com/Israel-Laguan"
   },
   "contributors": [
-    {"name":"Victor Peña","email":"victordev2002@gmail.com","url":"https://github.com/Katsu08"},
-    {"name":"Emmanuel Azócar","email":"azocarmel@gmail.com","url":"https://github.com/e-azocar"},
-    {"name":"Angelica Molina","email":"angeli.molina1@gmail.com","url":"https://github.com/angelik0828"}
+    {
+      "name": "Victor Peña",
+      "email": "victordev2002@gmail.com",
+      "url": "https://github.com/Katsu08"
+    },
+    {
+      "name": "Emmanuel Azócar",
+      "email": "azocarmel@gmail.com",
+      "url": "https://github.com/e-azocar"
+    },
+    {
+      "name": "Angelica Molina",
+      "email": "angeli.molina1@gmail.com",
+      "url": "https://github.com/angelik0828"
+    }
   ],
   "license": "Apache 2",
   "repository": {

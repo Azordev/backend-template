@@ -1,5 +1,5 @@
-import { appInformation } from '../utils/systemInfo'
-import send from '../utils/responses'
+import { appInformation } from './utils/systemInfo'
+import send from './utils/responses'
 import { Response } from 'express'
 
 export default (_req, res: Response) => {

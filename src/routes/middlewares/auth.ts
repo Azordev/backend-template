@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import fs from 'fs'
-import responses from '../utils/responses'
+import responses from '../../controllers/utils/responses'
 
 const privateKey =
   fs.readFileSync('./azordev-RS256.key', 'utf8') || process.env.SECRET_KEY

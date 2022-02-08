@@ -13,12 +13,24 @@
 |                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
-## Table of Contents
-
-1. [Author](#author)
-2. [Contributing](#contributing)
-3. [Show your support](#show-your-support)
-4. [License](#license)
+- [Features](#features)
+  - [Getting started](#getting-started)
+    - [How to use it](#how-to-use-it)
+  - [Pre requirements](#pre-requirements)
+    - [Installation](#installation)
+    - [Set Environments](#set-environments)
+  - [Code Overview](#code-overview)
+  - [Dependencies](#dependencies)
+  - [Application Structure](#application-structure)
+  - [Error Handling](#error-handling)
+  - [Authentication](#authentication)
+- [Collaborators](#collaborators)
+  - [References and kudos](#references-and-kudos)
+    - [Used:](#used)
+    - [Ideas](#ideas)
+  - [Contributing](#contributing)
+  - [Show your support](#show-your-support)
+  - [License](#license)
 
 # Features
 
@@ -43,16 +55,16 @@
 
 ### How to use it
 
-This code is meant to be run in a server accesible online, so other services can use it, in this case a ticket frontend. This is a Rest Api solution using basic database create, read, update and delete operations (CRUD) as well as a basic token (JWT) generator/validator.
+This code is meant to be run in a server accesible online, so other services can use it. This is a Rest Api solution using basic database create, read, update and delete operations (CRUD) as well as a basic token (JWT) generator/validator.
 
-I use a RESTful API to be used by any other client, but for human readability I also added `swagger` (it can even be used as an ad hoc admin panel!). To use it from a client you need to make HTPP(S) requests, for example using `curl`:
+It uses a RESTful API to be used by any other client, but for human readability it also have `swagger` (it can even be used as an ad hoc admin panel!). To use it from a client you need to make HTPP(S) requests, for example using `curl`:
 
 ```sh
 > curl http://localhost:8000/ping -v
 > curl -d "email=example&password=example2" http://localhost:8000/api/v1/auth/login
 ```
 
-But you can use any language or library: PHP, GO, C++, Rust, etc. The only unique point is how to manage the JWT. I decided to use a header named `x-access-token`, in order to avoid a normal way to check for tokens: `Authorization: Bearer` header. This is just an extra security measure. To send a JWT token for a request in a protected endpoint, you MUST use `x-access-token` header.
+But you can use any language or library: PHP, GO, C++, Rust, etc. The only unique point is how to manage the JWT. It was decided to use a header named `x-access-token`, in order to avoid a normal way to check for tokens: `Authorization: Bearer` header. This is just an extra security measure. To send a JWT token for a request in a protected endpoint, you MUST use `x-access-token` header.
 
 ## Pre requirements
 
@@ -80,11 +92,26 @@ To get the Node server running locally:
 
 - Clone this repo
 - `npm install` to install all required dependencies
-- `npm run dev` to start the local server
+- `npm run dev` or `npm run dev:dash` (with GUI-like experience on your terminal) to start the local server
+
+### Set Environments
+
+```sh
+> cp .env.example .env
+> nano .env
+```
+
+Remove local branches deleted on the remote server
+
+```sh
+> git fetch -p && for branch in `git branch -vv --no-color | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+```
+
+Check unused, outdated states of dependencies: `npx depcheck # OR npx npm-check-updates`
 
 ## Code Overview
 
-This backend's code is made using JavaScript language, and [Node.js](nodejs.org) runtime. With a package named Express.js I managed to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level.
+This backend's code is made using JavaScript language, and [Node.js](nodejs.org) runtime. With a package named Express.js to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level. Typing and compile correctness by Typescript.
 
 As with most of node.js applications, we would want to install node and npm in our local PC in order to run the server or develop code. This folder include all the necessary files to run the server local or online, just take into account that you'll need to use a terminal as no GUI is available yet.
 
@@ -101,10 +128,11 @@ For more information about the code please check the [code overview](docs/CODE_O
 
 ## Application Structure
 
+
+
 - `app.js` - The entry point to our application. This file defines our express server and connects it to MongoDB using mongoose. It also requires the routes and models we'll be using in the application.
-- `config/` - This folder contains configuration for passport as well as a central location for configuration/environment variables.
 - `routes/` - This folder contains the route definitions for our API.
-- `models/` - This folder contains the schema definitions for our Mongoose models.
+- `models/` - This folder contains the schema definitions for our models.
 
 ## Error Handling
 

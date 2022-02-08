@@ -10,7 +10,7 @@ enum Environments {
 enum EnvironmentFile {
   LOCAL = '.env',
   PRODUCTION = '.env',
-  DEV = '.env.dev',
+  DEV = '.env.staging',
   TEST = '.env.test',
   QA = '.env.staging',
   STAGING = '.env.staging',

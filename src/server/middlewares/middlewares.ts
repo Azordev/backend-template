@@ -18,7 +18,7 @@ const middlewares = (app) => {
   app.set('trust proxy', 1)
   app.disable('x-powered-by')
   app.use(responseTime())
-  app.use(helmet({ contentSecurityPolicy: false }))
+  app.use(helmet())
   app.use(originUndefined, cors(corsOption()))
 
   // Used to extract info and pass it to wiston
@@ -26,14 +26,13 @@ const middlewares = (app) => {
     morgan(
       ':remote-addr - :remote-user ":method :url HTTP/:http-version" status: :status :res[content-length] - :response-time ms ":referrer" ":user-agent"',
       {
-        stream: stream,
+        stream,
       },
     ),
   )
 
   app.use(compression())
-  app.use(bodyParser.json({ limit: '5mb' }))
-  app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
+  app.use(bodyParser.json({ type: 'application/vnd.api+json', limit: '5mb' }))
   app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }))
   app.use(methodOverride('X-HTTP-Method-Override'))
 
@@ -51,13 +50,12 @@ const middlewares = (app) => {
   })
 
   if (!isProduction) {
-    app.use(errorHandler({ log: errorNotification }))
-  }
-
-  function errorNotification(err, str, req) {
-    const title = `Error in ${req.method} ${req.url}`
-
-    logger.error(title, str, err.msg)
+    app.use(
+      errorHandler({
+        log: (err, str, req) =>
+          logger.error(`Error in ${req.method} ${req.url}`, str, err.msg),
+      }),
+    )
   }
 
   app.get('*', function (req, _res, next) {

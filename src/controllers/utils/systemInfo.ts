@@ -4,8 +4,8 @@ import { globalEnv } from '../../server/app'
 export const appInformation = () => {
   return {
     name: globalEnv.appName,
-    version: globalEnv.version,
-    description: globalEnv.description,
+    version: globalEnv.appVersion,
+    description: globalEnv.appDescription,
   }
 }
 

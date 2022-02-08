@@ -1,7 +1,7 @@
 export interface IEnvironment {
   appName: string
-  description: string
-  version: string
+  appDescription: string
+  appVersion: string
   port?: number | null
   portHttps?: number | null
   secretKey: string

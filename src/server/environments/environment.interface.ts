@@ -7,7 +7,7 @@ export interface IEnvironment {
   secretKey: string
   applyEncryption: boolean
   logLevel: string
-  productionURL: string | null
+  urlWhitelist: string[]
   getCurrentEnvironment(): string
   isProductionEnvironment(): boolean
   isDevEnvironment(): boolean

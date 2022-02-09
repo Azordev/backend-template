@@ -7,7 +7,7 @@ export const originUndefined = (
   _: Response,
   next: NextFunction,
 ) => {
-  const { productionURL } = globalEnv
+  const { urlWhitelist } = globalEnv
 
   if (!req.headers.origin) {
     debug.error(
@@ -20,7 +20,7 @@ export const originUndefined = (
   ) {
     req.headers.origin = 'http://' + req.headers.host
   }
-  if (req.headers.host === productionURL) {
+  if (urlWhitelist.includes(req.headers.host)) {
     req.headers.origin = 'https://' + req.headers.host
   }
 
@@ -34,9 +34,13 @@ export const corsOption = (
     'http://localhost:443',
   ],
 ) => {
-  const { productionURL, isTestEnvironment, isDevEnvironment } = globalEnv
+  const { urlWhitelist, isTestEnvironment, isDevEnvironment } = globalEnv
 
-  if (productionURL) allowedOrigins.push(productionURL)
+  if (urlWhitelist) {
+    for (const url of urlWhitelist) {
+      allowedOrigins.push(url)
+    }
+  }
 
   return {
     origin: (origin: string, next: NextFunction) => {

@@ -10,13 +10,8 @@ const Environment: Environment = (env = 'local') => {
   const appName = name || 'azordev-backend'
   const appDescription = description || 'Server Backend'
   const appVersion = version || '0.1.0'
-  const port = Number(process.env.PORT) || 8000
-  const portHttps = Number(process.env.PORT_HTTPS) || 443
-  const secretKey: string = generateSecretKey()
-  const applyEncryption = process.env.APPLY_ENCRYPTION === 'true'
-  const logLevel = process.env.LOG_LEVEL || 'debug'
   const rootPath: string = path.resolve(__dirname, '../../../')
-  const productionURL = process.env.PRODUCTION_URL || null
+  const urlWhitelist: string[] = JSON.parse(process.env.URL_WHITELIST) || []
   let envPath: string
 
   switch (env) {
@@ -44,6 +39,11 @@ const Environment: Environment = (env = 'local') => {
 
   configDotenv({ path: envPath })
 
+  const port = Number(process.env.PORT) || 8000
+  const portHttps = Number(process.env.PORT_HTTPS) || 443
+  const secretKey: string = generateSecretKey()
+  const applyEncryption = process.env.APPLY_ENCRYPTION === 'true'
+  const logLevel = process.env.LOG_LEVEL || 'debug'
   const getCurrentEnvironment = (): string => {
     let environment: string = process.env.NODE_ENV || Environments.DEV
 
@@ -88,7 +88,7 @@ const Environment: Environment = (env = 'local') => {
     secretKey,
     applyEncryption,
     logLevel,
-    productionURL,
+    urlWhitelist,
     getCurrentEnvironment,
     isProductionEnvironment,
     isDevEnvironment,

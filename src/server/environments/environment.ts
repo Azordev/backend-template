@@ -11,7 +11,10 @@ const Environment: Environment = (env = 'local') => {
   const appDescription = description || 'Server Backend'
   const appVersion = version || '0.1.0'
   const rootPath: string = path.resolve(__dirname, '../../../')
-  const urlWhitelist: string[] = JSON.parse(process.env.URL_WHITELIST) || []
+  const envUrlWhitelist = process.env.URL_WHITELIST
+  const urlWhitelist: string[] = envUrlWhitelist
+    ? JSON.parse(envUrlWhitelist)
+    : []
   let envPath: string
 
   switch (env) {

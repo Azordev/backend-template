@@ -2,7 +2,7 @@ import { NextFunction, Request } from 'express'
 import memoryCache from 'memory-cache'
 
 const memCache = new memoryCache.Cache()
-const cache = (duration: number) => {
+const cache = (durationSeconds: number) => {
   return (req: Request, res, next: NextFunction) => {
     const key = '__express__' + req.originalUrl || req.url
     const cacheContent = memCache.get(key)
@@ -13,7 +13,7 @@ const cache = (duration: number) => {
       res.SendCopy = res.send
 
       res.send = (body) => {
-        memCache.put(key, body, duration * 1000)
+        memCache.put(key, body, durationSeconds * 1000)
         return res.SendCopy(body)
       }
 

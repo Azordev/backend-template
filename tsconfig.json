@@ -5,13 +5,13 @@
     "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./build",
+    "outDir": "build",
     "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "resolveJsonModule": true,
   },
   "include": [
@@ -25,5 +25,6 @@
     "*.config.js",
     "node_modules",
     "ecosystem.config.js",
+    "tsconfig-paths-bootstrap.js",
   ]
 }

@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    image: azordev-backend-ts:test
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_USERNAME=test
+      - DB_PASSWORD=test
+      - DB_NAME=test
+      - DB_SYNC=true
+
+  postgres:
+    image: postgres:11.3-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
+
+networks:
+  default:
+    ipam:
+      config:
+      - subnet: 172.10.2.0/23
+
+volumes:
+  pg_data:
+    driver: local

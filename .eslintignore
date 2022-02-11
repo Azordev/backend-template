@@ -1,6 +1,7 @@
 dist
 node_modules
-*.config.js
+*config.js
 *.config.ts
+tsconfig-paths-bootstrap.js
 .eslintrc.js
 coverage

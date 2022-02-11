@@ -17,7 +17,10 @@
     "typeorm",
     "wiston",
     "ormconfig",
-    "nvmrc"
+    "nvmrc",
+    "dockerignore",
+    "eslintignore",
+    "npmrc"
   ],
   "flagWords": [
     "hte"

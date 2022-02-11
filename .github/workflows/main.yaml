@@ -37,6 +37,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install package
+        run: npm install
       - uses: actionsx/prettier@v2
         with:
           # prettier CLI arguments.

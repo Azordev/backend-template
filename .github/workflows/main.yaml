@@ -48,9 +48,8 @@ jobs:
           issueSummaryType: full
           issueSummaryOnlyOnEvent: true
           configFile: .eslintrc.js
-      - uses: streetsidesoftware/cspell-action@v1.5.1
-        with:
-          config: '.'
+      - name: spelling
+        run: npm run spelling ci .
       - name: test
         run: npm test
       - name: build

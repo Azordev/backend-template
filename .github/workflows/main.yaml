@@ -39,8 +39,10 @@ jobs:
 
       - name: Install package
         run: npm install
-      - name: Prettier
-        run: npm run prettier:ci src
+      - uses: actionsx/prettier@v2
+        with:
+          # prettier CLI arguments.
+          args: --check src
       - uses: bradennapier/eslint-plus-action@v3.4.2
         with: 
           issueSummaryType: full

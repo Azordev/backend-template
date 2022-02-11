@@ -17,7 +17,7 @@
     "eslint:ci": "eslint --color --cache -f table",
     "lint:js:fix": "eslint src --fix",
     "prettier": "prettier src --write --config ./.prettierrc.js",
-    "prettier:ci": "prettier --check --config ./.prettierrc.js",
+    "prettier:ci": "prettier --check",
     "test": "jest --passWithNoTests --coverage -w=100%",
     "test:c": "jest --coverage --watchAll=false --ci --passWithNoTests",
     "test:cw": "jest --coverage --watchAll",

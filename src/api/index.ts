@@ -8,7 +8,7 @@ const api = (app: Application) => {
   try {
     app.use('/', system)
     app.use('/api', versionController)
-    app.use('/api', limiter)
+    app.use('/api', limiter(5))
     return app
   } catch (error) {
     debug.error(error)

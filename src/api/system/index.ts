@@ -8,6 +8,6 @@ import limiter from 'middlewares/limiter'
 const system = express.Router()
 
 system.get('/ping', cache(10), ping)
-system.get('/status', cache(1), limiter, authenticate, status)
+system.get('/status', cache(1), limiter(1), authenticate, status)
 
 export default system

@@ -13,7 +13,11 @@
     "maxsize",
     "micropayment",
     "middlewares",
-    "wiston"
+    "postgres",
+    "typeorm",
+    "wiston",
+    "ormconfig",
+    "nvmrc"
   ],
   "flagWords": [
     "hte"
@@ -21,11 +25,16 @@
   "ignorePaths": [
     "./.github/**",
     "./.vscode/**",
-    "./.dist/**",
+    "./.build/**",
     "node_modules/**",
     "package.json",
     "package-lock.json",
-    "pnpm-lock.yaml",
-    "yarn.lock"
+    "*ignore",
+    ".*rc",
+    "docker-compose.yml",
+    "docker-compose-*.yml",
+    "Dockerfile",
+    "Dockerfile.*",
+    "ormconfig.j"
   ]
 }

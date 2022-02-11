@@ -1,0 +1,14 @@
+FROM keymetrics/pm2:16-buster
+WORKDIR /app
+COPY . ./
+RUN npm install
+RUN pm2 install pm2-logrotate
+RUN pm2 set pm2-logrotate:compress true
+RUN pm2 set pm2-logrotate:max_size 50M
+RUN npm run build
+RUN npm cache clean --force
+
+COPY .env /app/build/
+
+CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
+EXPOSE 80

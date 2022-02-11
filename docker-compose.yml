@@ -1,0 +1,56 @@
+version: '3.7'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 127.0.0.1:8000/azordev-backend:staging
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_USERNAME=prod
+      - DB_PASSWORD_FILE=/run/secrets/db_password
+      - DB_NAME=prod
+      - JWT_SECRET_FILE=/run/secrets/jwt_secret
+    secrets:
+      - db_password
+      - jwt_secret
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  postgres:
+    image: postgres:11.3-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=prod
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
+      - POSTGRES_DB=prod
+    secrets:
+      - db_password
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  default:
+    ipam:
+      config:
+      - subnet: 172.10.2.0/23
+
+volumes:
+  pg_data:
+    driver: local
+
+secrets:
+  jwt_secret:
+    external: true
+  db_password:
+    external: true

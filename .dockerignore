@@ -1,0 +1,10 @@
+.git
+.vscode
+.github
+build
+node_modules
+.idea
+.eslintcache
+.env.development
+coverage/
+logs/*

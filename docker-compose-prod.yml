@@ -1,0 +1,65 @@
+version: '3.7'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: 127.0.0.1:5000/azordev-backend:prod
+    ports:
+      - 8000:80
+      - 443:443
+    depends_on:
+      - postgres
+    volumes:
+      - pm2_data:/root/.pm2/logs
+      - upload_data:/app/uploads
+    environment:
+      - DB_HOST=postgres
+      - DB_USERNAME=prod
+      - DB_PASSWORD_FILE=/run/secrets/db_password
+      - DB_NAME=prod
+      - JWT_SECRET_FILE=/run/secrets/jwt_secret
+      - NODE_ENV=production
+    secrets:
+      - db_password
+      - jwt_secret
+    deploy:
+      replicas: max
+      restart_policy:
+        condition: on-failure
+
+  postgres:
+    image: postgres:11.3-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=prod
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
+      - POSTGRES_DB=prod
+    secrets:
+      - db_password
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  default:
+    ipam:
+      config:
+      - subnet: 172.10.2.0/23
+
+volumes:
+  pg_data:
+    driver: local
+  pm2_data:
+    driver: local
+  upload_data:
+    driver: local
+
+secrets:
+  jwt_secret:
+    external: true
+  db_password:
+    external: true

@@ -1,4 +1,4 @@
 module.exports = {
-  ...require('eslint-config-nfour/.prettierrc'),
+  ...require('eslint-config-nfour/.prettierrc.js'),
   semi: false,
 }

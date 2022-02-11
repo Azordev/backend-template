@@ -42,13 +42,14 @@ jobs:
       - uses: actionsx/prettier@v2
         with:
           # prettier CLI arguments.
-          args: --check src
+          args: --list-different src
       - uses: bradennapier/eslint-plus-action@v3.4.2
         with: 
           issueSummaryType: full
           issueSummaryOnlyOnEvent: true
           configFile: .eslintrc.js
       - uses: streetsidesoftware/cspell-action@v1.5.1
+        config: '.'
       - name: test
         run: npm test
       - name: build

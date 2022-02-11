@@ -49,8 +49,6 @@ jobs:
           issueSummaryOnlyOnEvent: true
           configFile: .eslintrc.js
       - uses: streetsidesoftware/cspell-action@v1.5.1
-        with:
-          config: '.'
       - name: test
         run: npm test
       - name: build

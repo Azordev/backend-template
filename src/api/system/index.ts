@@ -7,6 +7,6 @@ import status from '../../controllers/api.status'
 const system = express.Router()
 
 system.get('/ping', cache(10), ping)
-system.get('/status', authenticate, status)
+system.get('/status', cache(1), authenticate, status)
 
 export default system

@@ -39,10 +39,10 @@
     "memory-cache": "~0.2.0",
     "method-override": "~3.0.0",
     "morgan": "~1.10.0",
-    "pg": "^8.7.3",
-    "reflect-metadata": "^0.1.13",
+    "pg": "~8.7.3",
+    "reflect-metadata": "~0.1.13",
     "response-time": "~2.3.2",
-    "typeorm": "^0.2.41",
+    "typeorm": "~0.2.41",
     "winston": "~3.5.1"
   },
   "devDependencies": {

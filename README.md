@@ -4,6 +4,7 @@
 [![Issues-open][issues-open-shield]][issues-url]
 [![Issues-closed][issues-closed-shield]][issues-url]
 [![Contributors][contributors-shield]][contributors-url]
+[![Code Size][code-size-shield][]
 
 <!-- PROJECT LOGO -->
 |                                        express-production-template                                       |
@@ -14,6 +15,7 @@
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
 - [Features](#features)
+  - [Tech Stack](#tech-stack)
   - [Getting started](#getting-started)
     - [How to use it](#how-to-use-it)
   - [Pre requirements](#pre-requirements)
@@ -22,7 +24,7 @@
   - [Code Overview](#code-overview)
   - [Dependencies](#dependencies)
   - [Application Structure](#application-structure)
-  - [Error Handling](#error-handling)
+  - [Generating Migration](#generating-migration)
   - [Authentication](#authentication)
 - [Collaborators](#collaborators)
   - [References and kudos](#references-and-kudos)
@@ -50,6 +52,20 @@
 - Standard Coding with Eslint and Prettier, this helps to keep thing into perspective.
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
+## Tech Stack
+
+| Category       | Name           |
+| -------------- | -------------- |
+| Language       | **TypeScript** |
+| JS Runtime     | **Node**       |
+| Web Framework  | **Express**    |
+| Database       | **PostgreSQL** |
+| ORM            | **TypeORM**    |
+| Test Framework | **Jest**       |
+| Authentication | **JWT**        |
+| Linter         | **TSLint**     |
+| Formatter      | **Prettier**   |
 
 ## Getting started
 
@@ -128,15 +144,16 @@ For more information about the code please check the [code overview](docs/CODE_O
 
 ## Application Structure
 
-
-
 - `app.js` - The entry point to our application. This file defines our express server and connects it to MongoDB using mongoose. It also requires the routes and models we'll be using in the application.
 - `routes/` - This folder contains the route definitions for our API.
 - `models/` - This folder contains the schema definitions for our models.
 
-## Error Handling
+## Generating Migration
 
-In `routes/api/index.js`, we define a error-handling middleware for handling Mongoose's `ValidationError`. This middleware will respond with a 422 status code and format the response to have error messages the clients can understand
+- Auto generate : **`npm run typeorm migration:generate -- -n <migration-name>`**
+- Create empty file : **`npm run typeorm migration:create -- -n <migration-name>`**
+- Run migration : **`npm run typeorm migration:run`**
+- Revert migration : **`npm run typeorm migration:revert`**
 
 ## Authentication
 
@@ -207,6 +224,7 @@ Feel free to fork this project and improve it
 [issues-open-shield]: https://img.shields.io/github/issues/Azordev/backend-template?style=for-the-badge
 [issues-url]: https://github.com/Azordev/backend-template/issues
 [issues-closed-shield]: https://img.shields.io/github/issues-closed/Azordev/backend-template?style=for-the-badge
+[code-size-shield]: https://img.shields.io/github/languages/code-size/Azordev/backend-template.svg?color=blueviolet&style=for-the-badge
 [badge-framework]: https://img.shields.io/badge/express.js-v4.x-9cf?style=for-the-badge
 [framework-url]: https://expressjs.com/
 [contributions-welcome]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge

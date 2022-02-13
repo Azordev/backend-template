@@ -1,26 +1,10 @@
 {
   "version": "0.2",
-  "language": "en,es",
+  "language": "en",
   "words": [
-    "Azócar",
     "azordev",
-    "commitlint",
-    "emmanuel",
-    "expressjs",
-    "interation",
     "Laguan",
-    "linkedin",
-    "maxsize",
-    "micropayment",
-    "middlewares",
-    "postgres",
-    "typeorm",
-    "wiston",
-    "ormconfig",
-    "nvmrc",
-    "dockerignore",
-    "eslintignore",
-    "npmrc"
+    "linkedin"
   ],
   "flagWords": [
     "hte"

@@ -18,12 +18,6 @@
     "coverage": true,
     "**/node_modules": true
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.formatOnSave": true,
-  "editor.rulers": [80, 120],
-  "editor.bracketPairColorization.enabled": true,
   "javascript.suggest.autoImports": true,
   "javascript.format.enable": false,
   "javascript.validate.enable": true,
@@ -42,9 +36,17 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
+  "editor.autoClosingBrackets": "always",
   "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "jest.autoRun": {
     "watch": false,
     "onSave": "test-file"
   },
+  "typescript.inlayHints.parameterNames.enabled": "all"
 }

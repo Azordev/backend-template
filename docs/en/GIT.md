@@ -13,7 +13,7 @@ git branch <name of branch>
 For convenience, the branches should have a defined structure. For example, if the issue is about adding a new feature, the branch should be:
 
 ```
-feature/#issuenumber-brief-description-of-the-feature
+feature/#issue number-brief-description-of-the-feature
 ```
 
 Suppose we have issue #12 that asks us to add a header to the main page. Then, the branch would be as follows:

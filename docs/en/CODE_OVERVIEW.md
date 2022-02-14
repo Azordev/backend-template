@@ -37,7 +37,7 @@ Requests are authenticated using the `Authorization` header with a valid JWT. We
 
 ## Databases
 
-I decided to use Postgres as my databases as it is a modern, opern sourced and powerful option. I also don't use an ORM as we usually don't need it if we know some SQL query build (or can use Google).
+I decided to use Postgres as my databases as it is a modern, open sourced and powerful option. I also don't use an ORM as we usually don't need it if we know some SQL query build (or can use Google).
 
 I defined some migrations to bootstrap a new server, you can use it by running `npm run set-db:dev` and have the migrations and seed run.
 

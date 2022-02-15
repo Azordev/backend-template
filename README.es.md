@@ -1,17 +1,18 @@
 <!-- PROYECTO ESCUDOS -->
-[![Horquillas][horquillas-escudo]][horquillas-url]
-[![Astrónomos][escudo-estrellas]][url-estrellas]
-[![Problemas-abiertos][problemas-escudo abierto]][problemas-url]
-[![Problemas-cerrados][problemas-cerrados-escudo]][problemas-url]
-[![Contribuidores][colaboradores-escudo]][colaboradores-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues-open][issues-open-shield]][issues-url]
+[![Issues-closed][issues-closed-shield]][issues-url]
+[![Contributors][contributors-shield]][contributors-url]
+[![Code Size][code-size-shield][]
 
 <!-- LOGOTIPO DEL PROYECTO -->
-| plantilla-de-producción-exprés |
+| plantilla-de-producción-de-express |
 | :------------------------------------------------- -------------------------------------------------- ---: |
-| ![icono de la aplicación][] |
+| ![app-icon][] |
 | ¡Plantilla para backends con NodeJS + Express, lista para usar en producción! |
 | [🐞 Informar de un error o 🙋‍♂️ solicitar una función][issues-url] |
-| [![contribuciones bienvenidas][contribuciones-bienvenidas]][problemas-url] [![Licencia][insignia-apache]][licencia-apache] |
+| [![contribuciones bienvenidas][contribuciones-bienvenidas]][problemas-url] [![Licencia][insignia-apache]][apache-license] |
 
 - [Funciones funciones)
   - [Primeros pasos](#primeros pasos)
@@ -34,7 +35,7 @@
 
 # Características
 
-[![Marco][insignia-marco]][marco-url]
+[![Framework][insignia-framework]][framework-url]
 ![javascript][]
 ![js nodo][]
 

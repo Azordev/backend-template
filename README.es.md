@@ -1,4 +1,4 @@
-<!-- PROYECTO ESCUDOS -->
+<!-- INSIGNIAS DE PROYECTO -->
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues-open][issues-open-shield]][issues-url]
@@ -12,9 +12,10 @@
 | ![app-icon][] |
 | ¡Plantilla para backends con NodeJS + Express, lista para usar en producción! |
 | [🐞 Informar de un error o 🙋‍♂️ solicitar una función][issues-url] |
-| [![contribuciones bienvenidas][contribuciones-bienvenidas]][problemas-url] [![Licencia][insignia-apache]][apache-license] |
+| [![contribuciones bienvenidas][contribuciones-bienvenidas]][issues-url]
+ [![Licencia][insignia-apache]][apache-license] |
 
-- [Funciones funciones)
+- [Características] (#Características)
   - [Primeros pasos](#primeros pasos)
     - [Cómo usarlo](#cómo-usarlo)
   - [Requisitos previos](#requisitos previos)
@@ -39,12 +40,12 @@
 ![javascript][]
 ![js nodo][]
 
-- Soporte asíncrono/en espera
-- Implementación del registrador WinstonJs
+- Soporte para patron async/await
+- Implementación del logger WinstonJs
 - Manejo de errores
-- Migraciones de Postgres y soporte de semillas
-- Validación de parámetros básicos de solicitud
-- Especificación Open Api implementada a través de swagger y swagger-ui
+- Migraciones de Postgres y soporte de seeds
+- Validación de parámetros en solicitudes
+- Especificación Open API implementada a través de swagger y swagger-ui
 - Implementación JWT
 - Variables de entorno para contener los valores de configuración del archivo `.env`
 - Programación funcional con Middlewares y helpers
@@ -52,11 +53,26 @@
 
 [![Guía de estilo de JavaScript](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
+## Tech Stack
+
+| Categoria      | Nombre           |
+| -------------- | -------------- |
+| Lenguaje       | **TypeScript** |
+| JS Runtime     | **Node**       |
+| Framework Web  | **Express**    |
+| Base De Datos  | **PostgreSQL** |
+| ORM            | **TypeORM**    |
+| Framework de   |                |
+| pruebas        | **Jest**       |
+| Autenticación  | **JWT**        |
+| Linter         | **TSLint**     |
+| Formateador    | **Prettier**   |
+
 ## Empezando
 
 ### Cómo usarlo
 
-Este código está destinado a ejecutarse en un servidor accesible en línea, por lo que otros servicios pueden usarlo. Esta es una solución Rest Api que utiliza operaciones básicas de creación, lectura, actualización y eliminación (CRUD) de la base de datos, así como un generador/validador de token básico (JWT).
+Este código está destinado a ejecutarse en un servidor accesible en línea, por lo que otros servicios pueden usarlo. Esta es una solución Rest API que utiliza operaciones básicas de creación, lectura, actualización y eliminación (CRUD) de la base de datos, así como un generador/validador de token básico (JWT).
 
 Utiliza una API RESTful para ser utilizada por cualquier otro cliente, pero para la legibilidad humana también tiene `swagger` (¡incluso puede usarse como un panel de administración ad hoc!). Para usarlo desde un cliente, debe realizar solicitudes HTTP (S), por ejemplo, usando `curl`:
 
@@ -75,9 +91,9 @@ Antes de empezar necesitas tener algunos requisitos:
 
   Node.js es un entorno de ejecución para Javascript que nos permite usar el lenguaje fuera del navegador, en este caso lo usamos para configurar y ejecutar el servidor de desarrollo.
 
-2. [npm](https://www.npmjs.com/) > v8.1.2
+2. [NPM](https://www.npmjs.com/) > v8.1.2
 
-    npm es un administrador de paquetes para Node.js y viene instalado con él, lo usamos para instalar y administrar dependencias de aplicaciones.
+    NPM es un administrador de paquetes para Node.js y viene instalado con él, lo usamos para instalar y administrar dependencias de aplicaciones.
 
 3. [Git](https://git-scm.com/) > v2.0.0
 
@@ -93,7 +109,7 @@ Para que el servidor Node se ejecute localmente:
 
 - Clonar este repositorio
 - `npm install` para instalar todas las dependencias requeridas
-- `npm run dev` o `npm run dev:dash` (con experiencia similar a GUI en su terminal) para iniciar el servidor local
+- `npm run dev` (con experiencia similar a GUI en su terminal) para iniciar el servidor local
 
 ### Establecer entornos
 
@@ -114,7 +130,7 @@ Compruebe los estados de dependencias no utilizados y obsoletos: `npx depcheck #
 
 El código de este backend está hecho usando el lenguaje JavaScript y el tiempo de ejecución nodejs.org. Con un paquete llamado Express.js para crear el servidor, routers y middleware necesarios. También se utiliza PostgreSQL para proporcionar una capa de base de datos moderna, de código abierto y de alto rendimiento. Por último, el servidor tiene paquetes auxiliares para el desarrollo y la implementación para garantizar que esté listo para la producción a nivel empresarial. Escribir y compilar la corrección por Typescript.
 
-Al igual que con la mayoría de las aplicaciones de node.js, nos gustaría instalar node y npm en nuestra PC local para ejecutar el servidor o desarrollar código. Esta carpeta incluye todos los archivos necesarios para ejecutar el servidor local o en línea, solo tenga en cuenta que necesitará usar una terminal ya que aún no hay una GUI disponible.
+Al igual que con la mayoría de las aplicaciones de Node.js, nos gustaría instalar Node y NPM en nuestra PC local para ejecutar el servidor o desarrollar código. Esta carpeta incluye todos los archivos necesarios para ejecutar el servidor local o en línea, solo tenga en cuenta que necesitará usar una terminal ya que aún no hay una GUI disponible.
 
 Si desea desarrollar, debe configurar un buen entorno de desarrollo. En primer lugar, un buen editor de texto/IDE, prefiero usar Visual Studio Code, pero puede usar cualquier otra cosa. Para el uso de VSCode, proporciono archivos de configuración en la carpeta oculta `.vscode`.
 

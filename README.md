@@ -8,10 +8,10 @@
 
 <!-- PROJECT LOGO -->
 |                                        express-production-template                                       |
-| :------------------------------------------------------------------------------------------------------: |
-|                                              ![app-icon][]                                               |
-|              Template for backends with NodeJS + Express, ready to use in production!                    |
-|                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
+| :--------------------------------------------------------------------------------: |
+|![app-icon][]                                               |
+|Template for backends with NodeJS + Express, ready to use in production!                    |
+|[🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]|
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
 - [Features](#features)
@@ -45,7 +45,7 @@
 - Error Handling
 - Postgres Migrations and Seed Support
 - Basic request parameters Validation
-- Open Api Specification implemented through swagger and swagger-ui
+- Open API Specification implemented through swagger and swagger-ui
 - JWT implementation
 - Environment variables to hold configuration values `.env` file
 - Functional Programming with Middlewares and helpers
@@ -71,7 +71,7 @@
 
 ### How to use it
 
-This code is meant to be run in a server accesible online, so other services can use it. This is a Rest Api solution using basic database create, read, update and delete operations (CRUD) as well as a basic token (JWT) generator/validator.
+This code is meant to be run in a server accesible online, so other services can use it. This is a Rest API solution using basic database create, read, update and delete operations (CRUD) as well as a basic token (JWT) generator/validator.
 
 It uses a RESTful API to be used by any other client, but for human readability it also have `swagger` (it can even be used as an ad hoc admin panel!). To use it from a client you need to make HTTP(S) requests, for example using `curl`:
 
@@ -108,7 +108,7 @@ To get the Node server running locally:
 
 - Clone this repo
 - `npm install` to install all required dependencies
-- `npm run dev` or `npm run dev:dash` (with GUI-like experience on your terminal) to start the local server
+- `npm run dev` (with GUI-like experience on your terminal) to start the local server
 
 ### Set Environments
 
@@ -129,7 +129,7 @@ Check unused, outdated states of dependencies: `npx depcheck # OR npx npm-check-
 
 This backend's code is made using JavaScript language, and nodejs.org runtime. With a package named Express.js to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level. Typing and compile correctness by Typescript.
 
-As with most of node.js applications, we would want to install node and npm in our local PC in order to run the server or develop code. This folder include all the necessary files to run the server local or online, just take into account that you'll need to use a terminal as no GUI is available yet.
+As with most of Node.js applications, we would want to install Node and npm in our local PC in order to run the server or develop code. This folder include all the necessary files to run the server local or online, just take into account that you'll need to use a terminal as no GUI is available yet.
 
 If you want to develop you have to setup a good dev environment. First of all a good text editor/IDE, I prefer to use Visual Studio Code, but you can use anything else. For the use of VSCode I provide configuration files in the hidden folder `.vscode`.
 

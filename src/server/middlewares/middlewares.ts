@@ -16,9 +16,12 @@ const middlewares = (app: Application) => {
   // Enable if you're behind a reverse proxy (Heroku in our case)
   // see https://expressjs.com/en/guide/behind-proxies.html
   app.set('trust proxy', 1)
-  app.disable('x-powered-by')
   app.use(responseTime())
-  app.use(helmet())
+
+  app.use(
+    helmet({ contentSecurityPolicy: { directives: { defaultSrc: "'self'" } } }),
+  )
+
   app.use(originUndefined, cors(corsOption()))
 
   // Used to extract info and pass it to wiston

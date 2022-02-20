@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import fs from 'fs'
 import { NextFunction, Request, Response } from 'express'
 import sendResponse from '../controllers/utils/responses'
+import { cryptoTimingSafeEqualStr } from 'lib/crypto'
 
 const privateKey =
   fs.readFileSync('./azordev-RS256.key', 'utf8') || process.env.SECRET_KEY
@@ -37,6 +38,9 @@ export const verifyToken = (
     return false
   }
 }
+
+export const verifyPassword = (storedPassword: string, givenPassword: string) =>
+  cryptoTimingSafeEqualStr(storedPassword, givenPassword)
 
 export const decodeToken = (token: string) => {
   const decoded = jwt.decode(token, { complete: true })

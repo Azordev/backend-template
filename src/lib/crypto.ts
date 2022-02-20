@@ -111,3 +111,15 @@ export const decrypt = (data: string, secretKey: string): string => {
     throw new Error(exception)
   }
 }
+
+// timing safe string compare function
+export const cryptoTimingSafeEqualStr = (a, b) => {
+  if (typeof a === 'string' && typeof b === 'string') {
+    const bufA = Buffer.from(a)
+    const bufB = Buffer.from(b)
+
+    return crypto.timingSafeEqual(bufA, bufB)
+  }
+
+  return false
+}

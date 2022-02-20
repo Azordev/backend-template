@@ -1,52 +1,23 @@
 {
-  "cSpell.language": "en",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "liveshare.languages.allowGuestCommandControl": true,
-  "telemetry.telemetryLevel": "crash",
-  "emmet.excludeLanguages": [],
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {
-    "markdown": "html",
-  },
-  "files.insertFinalNewline": true,
-  "files.exclude": {
-    "**/node_modules": true,
-  },
   "search.exclude": {
-    "build": true,
-    "logs": true,
-    "coverage": true,
-    "**/node_modules": true
+    "**/.sst": true
   },
-  "javascript.suggest.autoImports": true,
-  "javascript.format.enable": false,
-  "javascript.validate.enable": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.formatOnSave": true,
-    "editor.wordWrap": "on",
-    "editor.renderWhitespace": "all",
-    "editor.acceptSuggestionOnEnter": "off"
-  },
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
-  "editor.autoClosingBrackets": "always",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.rulers": [80, 120],
-  "editor.bracketPairColorization.enabled": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "jest.autoRun": {
-    "watch": false,
-    "onSave": "test-file"
-  },
-  "typescript.inlayHints.parameterNames.enabled": "all"
+  "task.allowAutomaticTasks": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "debug.openDebug": "neverOpen",
+  "problems.autoReveal": true,
+  "terminal.integrated.hideOnStartup": "always",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.inheritEnv": false,
+  "jestrunner.configPath": "jest.unit.config.cjs",
+  "compile-hero.disable-compile-files-on-did-save-code": true,
+  "tasks": {
+    "label": "lint on open",
+    "type": "shell",
+    "command": "npm run lint",
+    "runOn": "folderOpen"
+  }
 }

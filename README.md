@@ -178,6 +178,8 @@ https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-j
 https://github.com/nfour/eslint-config-standard-typescript-prettier
 https://codeql.github.com/
 https://github.com/santoshshinde2012/node-boilerplate
+https://medium.com/@tadeaspetak/frontend-fullstack-security-298154016374
+https://github.com/PW486/express-ts-starter // Have docker conf
 
 
 ### Ideas
@@ -189,7 +191,6 @@ https://blog.appsignal.com/2021/02/03/improving-node-application-performance-wit
 https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
 https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
 https://caddyserver.com/docs/running
-https://github.com/PW486/express-ts-starter // Have docker conf
 
 
 ## Contributing

@@ -4,7 +4,7 @@
 [![Issues-open][issues-open-shield]][issues-url]
 [![Issues-closed][issues-closed-shield]][issues-url]
 [![Contributors][contributors-shield]][contributors-url]
-[![Code Size][code-size-shield][]
+[![Code Size][code-size-shield]][code-size-shield]
 
 <!-- PROJECT LOGO -->
 |                                        express-production-template                                       |
@@ -86,21 +86,15 @@ But you can use any language or library: PHP, GO, C++, Rust, etc. The only uniqu
 
 Before to start you need have some requirements:
 
-1. [Node.js](https://nodejs.org/) > v16.13.2
 
-   Node.js is a runtime environment for Javascript that allows us to use the language outside of the browser, in this case we use it to configure and run the development server.
-
-2. [npm](https://www.npmjs.com/) > v8.1.2
-
-   npm is a package manager for Node.js and comes installed with it, we use it to install and manage application dependencies.
-
-3. [Git](https://git-scm.com/) > v2.0.0
-
-   Git is a version control system for code, we use it to manage the different branches of the code.
-
-4. Connection to internet
-
-5. [Visual Studio Code](https://code.visualstudio.com/) or another code editor (optional)
+| Requisito      | Descripción           |
+| -------------- | -------------- |
+|[Node.js](https://nodejs.org/en/) > v16.13.2    | Runtime environment for Javascript that allows us to use the language outside of the browser, in this case we use it to configure and run the development server.  |
+|[NPM](https://www.npmjs.com/) > v8.1.2   | Package manager for Node.js and comes installed with it, we use it to install and manage application dependencies.|
+|[Git](https://git-scm.com/) > v2.0.0  | Version control system for code, we use it to manage the different branches of the code.
+   |
+|Conexión a internet | |
+|[Visual Studio Code](https://code.visualstudio.com/) | Code editor (another code editor can be used) |
 
 ### Installation
 
@@ -170,27 +164,29 @@ Requests are authenticated using the `Authorization` header with a valid JWT. We
 |          ![emmanuel-pic][]          |                                                                                                                                     |
 |   [Angelica Molina][ange-github]    |![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                                                   |
 |            ![ange-pic][]            |                                                                                                                                     |
+|    [denis Osuna][denis-github]     | ![email-icon][] Envíame un correo electrónico a [denisosuna@gmail.com][denis-email] / ![linkedin-icon][] Conectar a [my LinkedIn][denis-linkedin]  |
+|           ![denis-pic][]   
 
 ## References and kudos
 
 ### Used:
-https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0
-https://github.com/nfour/eslint-config-standard-typescript-prettier
-https://codeql.github.com/
-https://github.com/santoshshinde2012/node-boilerplate
-https://medium.com/@tadeaspetak/frontend-fullstack-security-298154016374
-https://github.com/PW486/express-ts-starter // Have docker conf
+
+- https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0
+- https://github.com/nfour/eslint-config-standard-typescript-prettier
+- https://codeql.github.com/
+- https://github.com/santoshshinde2012/node-boilerplate
 
 
 ### Ideas
 
-https://github.com/MichielDeMey/express-jwt-permissions
-https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
-https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
-https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
-https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
-https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
-https://caddyserver.com/docs/running
+- https://github.com/MichielDeMey/express-jwt-permissions
+- https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
+- https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
+- https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
+- https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
+- https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
+- https://caddyserver.com/docs/running
+- https://github.com/PW486/express-ts-starter // Have docker conf
 
 
 ## Contributing
@@ -252,5 +248,6 @@ Feel free to fork this project and improve it
 [ange-pic]: https://avatars.githubusercontent.com/u/4030477?s=200&v=4
 [ange-email]: mailto:angeli.molina1@gmail.com
 [denis-github]: https://github.com/denisosuna
+[denis-linkedin]: https://www.linkedin.com/in/denisosuna
 [denis-pic]: https://avatars.githubusercontent.com/u/21060798?v=4
 [denis-email]: denisosuna@gmail.com

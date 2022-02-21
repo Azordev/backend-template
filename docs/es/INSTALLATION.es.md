@@ -1,23 +1,23 @@
 # Instalación
 
 - [Instalación](#instalación)
-  - [Inicio rápido] (#inicio rápido)
+  - [Inicio rápido](#inicio-rápido)
   - [Instalación detallada](#instalación-detallada)
-    - [Requisitos previos](#requisitos previos)
+    - [Requisitos previos](#requisitos-previos)
     - [Versión corta](#versión-corta)
-  - [Establecer variables ambientales](#establecer-variables-ambientales)
-  - [Solución de problemas](#solución de problemas)
+  - [Establecer variables de entorno](#establecer-variables-de-entorno)
+  - [Solución de issues](#solución-de-issues)
 
-> Asumo que estás usando Linux o Mac, pero es similar en Windows. Al final hay una [FAQ](#troubleshooting) si te encuentras con problemas conocidos.
+> Asumo que estás usando Linux o Mac, pero es similar en Windows. Al final hay una [FAQ](#troubleshooting) si te encuentras con issues conocidos.
 
-En primer lugar, debe clonar el código usando git (también puede simplemente [descargar el código] []).
+En primer lugar, debe clonar el código usando git (también puede simplemente [download-the-code][]).
 
 ```sh
 > git clone https://github.com/Azordev/backend-template.git
 > cd coolticket-server
 ```
 
-Para que el servidor Node se ejecute localmente, tenemos 2 opciones, la larga y la corta. El corto es volverse elegante y usar Docker 🐋, en ese caso, vaya a [la siguiente sección] (#inicio rápido). Para una experiencia completa con Node, vaya a [Instalación detallada](#instalación-detallada).
+Para que el servidor Node se ejecute localmente, tenemos 2 opciones, la larga y la corta. la corta es volverse elegante y usar Docker 🐋, en ese caso, vaya a [la siguiente sección] (#inicio rápido). Para una experiencia completa con Node, vaya a [Instalación detallada](#instalación-detallada).
 
 ## Inicio rápido
 
@@ -30,7 +30,7 @@ Para que el servidor Node se ejecute localmente, tenemos 2 opciones, la larga y 
 ```
 - Ingrese localhost:8000 en un navegador para ver la aplicación en ejecución, incluida una base de datos de prueba de `Dockerfile`.
 
-Tenga en cuenta que obtendrá un entorno de desarrollo centrado en desarrollar código de nodo, con una base de datos de prueba en postgres ya conectada.
+Tenga en cuenta que obtendrá un entorno de desarrollo centrado en desarrollar código de Node, con una base de datos de prueba en Postgres ya conectada.
 
 ## Instalación detallada
 
@@ -38,9 +38,9 @@ Entonces, ¿quieres sentir el metal e instalar cosas (como una carpeta pesada `n
 
 ### Requisitos previos
 
-- [ ] `npm` v8.1 +
-- [ ] `nodo` v16.13 +
-- [ ] Un buen terminal
+- [ ] `Npm` v8.1 +
+- [ ] `Nodo` v16.13 +
+- [ ] Una buena terminal
 - [ ] Un editor de texto como VSCode
 - [ ] Un navegador como Firefox o Chrome, o un cliente como Postman/Insomnia para probar
 
@@ -55,7 +55,7 @@ Entonces, ¿quieres sentir el metal e instalar cosas (como una carpeta pesada `n
 Ahora debería tener todas las carpetas y archivos para ejecutar el servidor, el único problema es que necesitamos una base de datos que funcione. Con ese fin, exploremos 2 formas diferentes.
 
 - OPCIÓN 1: Ejecute su propia base de datos
-  - Descarga e instala PostgreSQL ([instrucciones][instalar postgres])
+  - Descarga e instala PostgreSQL ([instrucciones][instalar-postgres])
   - Asegúrese de haber instalado el servidor PostgreSQL ejecutando
 
     ```sh
@@ -70,10 +70,10 @@ Ahora debería tener todas las carpetas y archivos para ejecutar el servidor, el
     ```
 
   - Cree una base de datos (sin crear tablas) y copie las credenciales en el archivo `.env`
-- OPCIÓN 2: Usar una base de datos en línea (como [Heroku's][herokus postgres])
+- OPCIÓN 2: Usar una base de datos en línea (como [Heroku's][herokus-postgres])
   - Básicamente, simplemente gire una instancia y copie las credenciales en el entorno del proyecto.
 
-En este punto, deberíamos tener 3 conjuntos de credenciales de bases de datos en el archivo `.env`. Si necesita más con esto, consulte [esta información] (#establecer-variables-ambientales). Cuando esté seguro de que las bases de datos funcionan y puede conectarse, pasemos a la migración y la inicialización.
+En este punto, deberíamos tener 3 conjuntos de credenciales de bases de datos en el archivo `.env`. Si necesita más con esto, consulte [esta información] (#establecer-variables-de entorno). Cuando esté seguro de que las bases de datos funcionan y puede conectarse, pasemos a la migración y la inicialización.
 
 - `set-db:dev` para dejar la base de datos lista para la siembra. Tenga en cuenta que esto borrará todos los datos existentes, si existen. Aplica todas las migraciones: crea tablas, sepáralas y prepárate para la acción.
 
@@ -81,11 +81,11 @@ En este punto, deberíamos tener 3 conjuntos de credenciales de bases de datos e
 
 - Ingrese localhost:8000 en un navegador para ver la documentación de Swagger para el servidor.
 
-## Establecer variables ambientales
+## Establecer variables de entorno
 
 Como somos profesionales aquí, necesitamos al menos 3 entornos: Desarrollo (para modificar el código a voluntad), Prueba (para verificar si todo funciona bien) y Producción (El que usarán los clientes). Cada uno necesita una base de datos diferente (puede usar la misma base de datos para desarrollo y prueba *si sabe lo que está haciendo*).
 
-Este proyecto usa `dotenv` y `cross-env` para administrar variables ambientales y evitar exponer información valiosa como las credenciales de su servidor. Podemos poner toda la información secreta en el archivo `.env` ya que no se comparte en público (nota en `.gitignore` no estamos compartiendo este archivo). Pero también implica que debe encargarse de agregar los valores de las variables usted mismo.
+Este proyecto usa `dotenv` y `cross-env` para administrar variables de entorno y evitar exponer información valiosa como las credenciales de su servidor. Podemos poner toda la información secreta en el archivo `.env` ya que no se comparte en público (nota en `.gitignore` no estamos compartiendo este archivo). Pero también implica que debe encargarse de agregar los valores de las variables usted mismo.
 
 Es por eso que puede ver en .env example que tenemos 4 conjuntos de variables:
 
@@ -127,20 +127,20 @@ PRODUCTION_URL= # Agregar un enlace a la lista blanca, esperado https://cooltick
 
 > Por lo general, no necesita agregar comillas a ninguna variable, por lo que, por ejemplo, si su contraseña es "Sup3erS3cr3+", puede configurar la variable `DB_PASSWORD=Sup3erS3cr3+`. ¡Solo trate de no usar el símbolo de almohadilla (#) en su pase o cualquier variable! (en tal caso utilice comillas). Algunos caracteres también necesitan un símbolo de escape (por ejemplo, `\'` para obtener una cita `)
 
-## Solución de problemas
+## Solución de issues
 
-Si se encontró con otro problema, no dude en comunicarse con la [Sección de problemas] [URL de problemas] y ayúdeme a depurar el código comentando su problema.
+Si se encontró con otro problema, no dude en comunicarse con la [Sección de issues] [URL de issues] y ayúdeme a depurar el código comentando su problema.
 
 - Al migrar  `NODE_TLS_REJECT_UNAUTHORIZED is not a program... etc` en Windows, es decir, no reconoce las variables env.
 
-> Descomenta la línea en el archivo `.npmrc` provisto. Consulta [este problema][npmrc issue] para obtener más información.
+> Descomenta la línea en el archivo `.npmrc` provisto. Consulta [este problema][problema de npmrc] para obtener más información.
 
 - \<Agregue su pregunta aquí>
 
 [problema de npmrc]: https://github.com/kentcdodds/cross-env/issues/192#issuecomment-513341729
-[descargar el código]: https://github.com/Azordev/backend-template/archive/main.zip
-[Motor de Docker]: https://docs.docker.com/get-docker/
-[Composición de Docker]: https://docs.docker.com/compose/install/
-[instalar postgres]: https://www.postgresql.org/download/
-[postgres de herokus]: https://www.heroku.com/postgres
+[download-the-code]: https://github.com/Azordev/backend-template/archive/main.zip
+[Docker Engine]: https://docs.docker.com/get-docker/
+[Docker Compose]: https://docs.docker.com/compose/install/
+[instalar-postgres]: https://www.postgresql.org/download/
+[herokus-postgres]: https://www.heroku.com/postgres
 [temas-url]: https://github.com/Azordev/backend-template/issues

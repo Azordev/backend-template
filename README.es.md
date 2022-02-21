@@ -4,24 +4,24 @@
 [![Issues-open][issues-open-shield]][issues-url]
 [![Issues-closed][issues-closed-shield]][issues-url]
 [![Contributors][contributors-shield]][contributors-url]
-[![Code Size][code-size-shield][]
+[![Code Size][code-size-shield]][code-size-shield]
 
 <!-- LOGOTIPO DEL PROYECTO -->
-| plantilla-de-producción-de-express |
-| :------------------------------------------------- -------------------------------------------------- ---: |
-| ![app-icon][] |
-| ¡Plantilla para backends con NodeJS + Express, lista para usar en producción! |
-| [🐞 Informar de un error o 🙋‍♂️ solicitar una función][issues-url] |
-| [![contribuciones bienvenidas][contribuciones-bienvenidas]][issues-url]
- [![Licencia][insignia-apache]][apache-license] |
+|                                        express-production-template                                       |
+| :--------------------------------------------------------------------------------: |
+|![app-icon][]                                               |
+|¡Plantilla para backends con NodeJS + Express, lista para usar en producción!                   |
+|[🐞  Informar de un error o 🙋‍♂️ solicitar una función][issues-url]|
+| [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
-- [Características] (#Características)
-  - [Primeros pasos](#primeros pasos)
+- [Características](#Características)
+  - [Tech Stack](#tech-stack)
+  - [Primeros pasos](#primeros-pasos)
     - [Cómo usarlo](#cómo-usarlo)
-  - [Requisitos previos](#requisitos previos)
+  - [Requisitos previos](#requisitos-previos)
     - [Instalación](#instalación)
     - [Establecer entornos](#set-environments)
-  -[Descripción general del código](#descripción general del código)
+  -[Descripción general del código](#descripción-general-del-código)
   - [Dependencias](#dependencias)
   - [Estructura de la aplicación](#estructura-de-la-aplicación)
   - [Gestión de errores](#gestión-de-errores)
@@ -36,9 +36,9 @@
 
 # Características
 
-[![Framework][insignia-framework]][framework-url]
+[![Framework][badge-framework]][framework-url]
 ![javascript][]
-![js nodo][]
+![nodejs][]
 
 - Soporte para patron async/await
 - Implementación del logger WinstonJs
@@ -62,13 +62,12 @@
 | Framework Web  | **Express**    |
 | Base De Datos  | **PostgreSQL** |
 | ORM            | **TypeORM**    |
-| Framework de   |                |
-| pruebas        | **Jest**       |
+| Framework de pruebas | **Jest** |
 | Autenticación  | **JWT**        |
 | Linter         | **TSLint**     |
 | Formateador    | **Prettier**   |
 
-## Empezando
+## Primeros Pasos
 
 ### Cómo usarlo
 
@@ -81,27 +80,21 @@ Utiliza una API RESTful para ser utilizada por cualquier otro cliente, pero para
 > curl -d "email=example&password=example2" http://localhost:8000/api/v1/auth/login
 ```
 
-Pero puede usar cualquier idioma o biblioteca: PHP, GO, C ++, Rust, etc. El único punto único es cómo administrar el JWT. Se decidió utilizar un encabezado llamado `x-access-token`, para evitar una forma normal de comprobar si hay tokens: el encabezado `Authorization: Bearer`. Esta es solo una medida de seguridad adicional. Para enviar un token JWT para una solicitud en un punto final protegido, DEBE usar el encabezado `x-access-token`.
+Pero puede usar cualquier lenguaje o biblioteca: PHP, GO, C ++, Rust, etc. El único punto único es cómo administrar el JWT. Se decidió utilizar un encabezado llamado `x-access-token`, para evitar una forma normal de comprobar si hay tokens: el encabezado `Authorization: Bearer`. Esta es solo una medida de seguridad adicional. Para enviar un token JWT para una solicitud en un punto final protegido, DEBE usar el encabezado `x-access-token`.
 
-## Pre requisitos
+## Pequisitos previos
 
 Antes de empezar necesitas tener algunos requisitos:
 
-1. [Node.js](https://nodejs.org/en/) > v16.13.2
 
-  Node.js es un entorno de ejecución para Javascript que nos permite usar el lenguaje fuera del navegador, en este caso lo usamos para configurar y ejecutar el servidor de desarrollo.
+| Requisito      | Descripción           |
+| -------------- | -------------- |
+|[Node.js](https://nodejs.org/en/) > v16.13.2    | Entorno de ejecución para Javascript que nos permite usar el lenguaje fuera del navegador, en este caso se usa para configurar y ejecutar el servidor de desarrollo.  |
+|[NPM](https://www.npmjs.com/) > v8.1.2   |Administrador de paquetes para Node.js, se usa para instalar y administrar dependencias de aplicaciones.  |
+|[Git](https://git-scm.com/) > v2.0.0  | Sistema de control de versiones de código se implementa para administrar las diferentes ramas del código.   |
+|Conexión a internet | |
+|[Visual Studio Code](https://code.visualstudio.com/) | Editor de Codigo (Opcional) |
 
-2. [NPM](https://www.npmjs.com/) > v8.1.2
-
-    NPM es un administrador de paquetes para Node.js y viene instalado con él, lo usamos para instalar y administrar dependencias de aplicaciones.
-
-3. [Git](https://git-scm.com/) > v2.0.0
-
-    Git es un sistema de control de versiones de código, lo usamos para administrar las diferentes ramas del código.
-
-4. Conexión a internet
-
-5. [Visual Studio Code](https://code.visualstudio.com/) u otro editor de código (opcional)
 
 ### Instalación
 
@@ -128,11 +121,11 @@ Compruebe los estados de dependencias no utilizados y obsoletos: `npx depcheck #
 
 ## Descripción general del código
 
-El código de este backend está hecho usando el lenguaje JavaScript y el tiempo de ejecución nodejs.org. Con un paquete llamado Express.js para crear el servidor, routers y middleware necesarios. También se utiliza PostgreSQL para proporcionar una capa de base de datos moderna, de código abierto y de alto rendimiento. Por último, el servidor tiene paquetes auxiliares para el desarrollo y la implementación para garantizar que esté listo para la producción a nivel empresarial. Escribir y compilar la corrección por Typescript.
+El código de este backend está hecho usando el lenguaje JavaScript y el entorno de ejecución Node.js. Con un paquete llamado Express.js para crear el servidor, routers y middleware necesarios. También se utiliza PostgreSQL para proporcionar una capa de base de datos moderna, de código abierto y de alto rendimiento. Por último, el servidor tiene paquetes auxiliares para el desarrollo y la implementación para garantizar que esté listo para la producción a nivel empresarial. Escribir y compilar la corrección por Typescript.
 
-Al igual que con la mayoría de las aplicaciones de Node.js, nos gustaría instalar Node y NPM en nuestra PC local para ejecutar el servidor o desarrollar código. Esta carpeta incluye todos los archivos necesarios para ejecutar el servidor local o en línea, solo tenga en cuenta que necesitará usar una terminal ya que aún no hay una GUI disponible.
+Al igual que con la mayoría de las aplicaciones de Node.js, es necesario instalar Node y NPM en nuestra PC local para ejecutar el servidor o desarrollar código. Esta carpeta incluye todos los archivos necesarios para ejecutar el servidor local o en línea, solo tenga en cuenta que necesitará usar una terminal ya que aún no hay una interfaz gráfica de usuario disponible.
 
-Si desea desarrollar, debe configurar un buen entorno de desarrollo. En primer lugar, un buen editor de texto/IDE, prefiero usar Visual Studio Code, pero puede usar cualquier otra cosa. Para el uso de VSCode, proporciono archivos de configuración en la carpeta oculta `.vscode`.
+Si desea desarrollar, debe configurar un buen entorno de desarrollo. En primer lugar, un buen editor de texto/IDE, prefiero usar Visual Studio Code, pero puede usar cualquier otra cosa. Para el uso de VSCode se proporcionan archivos de configuración en la carpeta oculta `.vscode`
 
 Para obtener más información sobre el código, consulte la [descripción general del código] (docs/es/CODE_OVERVIEW.md).
 
@@ -149,6 +142,7 @@ Para obtener más información sobre el código, consulte la [descripción gener
 - `app.js` - El punto de entrada a nuestra aplicación. Este archivo define nuestro servidor express y lo conecta a MongoDB usando mongoose. También requiere las rutas y modelos que usaremos en la aplicación.
 - `routes/` - Esta carpeta contiene las definiciones de ruta para nuestra API.
 - `models/` - Esta carpeta contiene las definiciones de esquema para nuestros modelos.
+
 ## Manejo de errores
 
 En `routes/api/index.js`, definimos un middleware de manejo de errores para manejar `ValidationError` de Mongoose. Este middleware responderá con un código de estado 422 y formateará la respuesta para tener mensajes de error que los clientes puedan entender.
@@ -168,33 +162,37 @@ Las solicitudes se autentican mediante el encabezado "Autorización" con un JWT 
 |          ![emmanuel-pic][]          |                                                                                                                                     |
 |   [Angelica Molina][ange-github]    |![email-icon][] Envíame un correo electrónico a [angeli.molina1@gmail.com][ange-email]                                                                   |
 |            ![ange-pic][]            |                                                                                                                                     |
+|    [denis Osuna][denis-github]     | ![email-icon][] Envíame un correo electrónico a [denisosuna@gmail.com][denis-email] / ![linkedin-icon][] Conectar a [my LinkedIn][denis-linkedin]  |
+|           ![denis-pic][]   
+
 ## Referencias y felicitaciones
 
 ### Usado:
-https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0
-https://github.com/nfour/eslint-config-standard-typescript-prettier
-https://codeql.github.com/
-https://github.com/santoshshinde2012/node-boilerplate
+
+- https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0
+- https://github.com/nfour/eslint-config-standard-typescript-prettier
+- https://codeql.github.com/
+- https://github.com/santoshshinde2012/node-boilerplate
 
 
 ### Ideas
 
-https://github.com/MichielDeMey/express-jwt-permissions
-https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
-https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
-https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
-https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
-https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
-https://caddyserver.com/docs/running
-https://github.com/PW486/express-ts-starter // Have docker conf
+- https://github.com/MichielDeMey/express-jwt-permissions
+- https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
+- https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
+- https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
+- https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
+- https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
+- https://caddyserver.com/docs/running
+- https://github.com/PW486/express-ts-starter // Have docker conf
 
 
 ## Contribuyendo
 
 [![contributions welcome][contributions-welcome]][issues-url]
 
-🤝 ¡Las contribuciones, los problemas y las solicitudes de funciones son bienvenidos!
-Siéntase libre de revisar la [página de problemas][issues-url].
+🤝 ¡Las contribuciones, los issues y las pull request son bienvenidos!
+Siéntase libre de revisar la [página de issues][issues-url].
 
 ## Muestra tu apoyo
 
@@ -205,7 +203,7 @@ Iconos de:
 <a href="https://icons8.com/icon/13917/full-image">Icons8</a>
 ## Licencia
 
-[![Licencia][insignia-apache]][licencia-apache]
+[![License][badge-apache]][apache-license]
 
 📝 Este proyecto está bajo la licencia del [MIT]
 Siéntete libre de bifurcar este proyecto y mejorarlo.
@@ -220,6 +218,7 @@ Siéntete libre de bifurcar este proyecto y mejorarlo.
 [issues-open-shield]: https://img.shields.io/github/issues/Azordev/backend-template?style=for-the-badge
 [issues-url]: https://github.com/Azordev/backend-template/issues
 [issues-closed-shield]: https://img.shields.io/github/issues-closed/Azordev/backend-template?style=for-the-badge
+[code-size-shield]: https://img.shields.io/github/languages/code-size/Azordev/backend-template.svg?color=blueviolet&style=for-the-badge
 [badge-framework]: https://img.shields.io/badge/express.js-v4.x-9cf?style=for-the-badge
 [framework-url]: https://expressjs.com/
 [contributions-welcome]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge
@@ -246,5 +245,7 @@ Siéntete libre de bifurcar este proyecto y mejorarlo.
 [ange-pic]: https://avatars.githubusercontent.com/u/4030477?s=200&v=4
 [ange-email]: mailto:angeli.molina1@gmail.com
 [denis-github]: https://github.com/denisosuna
+[denis-linkedin]: https://www.linkedin.com/in/denisosuna
 [denis-pic]: https://avatars.githubusercontent.com/u/21060798?v=4
 [denis-email]: denisosuna@gmail.com
+

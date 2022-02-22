@@ -16,7 +16,7 @@ Por conveniencia, las branches deben tener una estructura definida. Por ejemplo,
 feature/#número-de-issue-breve-descripción-de-la-función
 ```
 
-Supongamos que tenemos el issue n. ° 12 que nos pide que agreguemos un encabezado a la página principal. Entonces, la rama quedaría de la siguiente manera:
+Supongamos que tenemos el issue n.° 12 que nos pide que agreguemos un encabezado a la página principal. Entonces, la rama quedaría de la siguiente manera:
 
 ```
 feature/#12-añadir-encabezado-a-la-página-principal

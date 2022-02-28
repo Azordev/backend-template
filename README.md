@@ -165,7 +165,7 @@ Requests are authenticated using the `Authorization` header with a valid JWT. We
 |          ![emmanuel-pic][]          |                                                                                                                                     |
 |   [Angelica Molina][ange-github]    |![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                                                   |
 |            ![ange-pic][]            |                                                                                                                                     |
-|    [denis Osuna][denis-github]     | ![email-icon][] Envíame un correo electrónico a [denisosuna@gmail.com][denis-email] / ![linkedin-icon][] Conectar a [my LinkedIn][denis-linkedin]  |
+|    [denis Osuna][denis-github]     | ![email-icon][] Email me to [denisosuna@gmail.com][denis-email] / ![linkedin-icon][] Connect to [my LinkedIn][denis-linkedin]  |
 |           ![denis-pic][]   
 
 ## References and kudos

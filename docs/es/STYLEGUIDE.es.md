@@ -57,7 +57,7 @@ function foo() {
 -- const bar = "I'm using single quotes inside";
 ```
 
-## Llaves (backets)
+## Llaves (brackets)
 
 Usamos Egyptian braces. Además, se requieren llaves en todos los elementos del bloque, incluso si son de una sola línea (if, while, do...while, try... catch... finally, etc...)
 

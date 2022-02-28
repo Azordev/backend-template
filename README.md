@@ -4,14 +4,15 @@
 [![Issues-open][issues-open-shield]][issues-url]
 [![Issues-closed][issues-closed-shield]][issues-url]
 [![Contributors][contributors-shield]][contributors-url]
-[![Code Size][code-size-shield][]
+[![Code Size][code-size-shield]][code-size-shield]
+
 
 <!-- PROJECT LOGO -->
 |                                        express-production-template                                       |
-| :------------------------------------------------------------------------------------------------------: |
-|                                              ![app-icon][]                                               |
-|              Template for backends with NodeJS + Express, ready to use in production!                    |
-|                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
+| :--------------------------------------------------------------------------------: |
+|![app-icon][]                                               |
+|Template for backends with NodeJS + Express, ready to use in production!                    |
+|[🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]|
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
 - [Features](#features)
@@ -45,7 +46,7 @@
 - Error Handling
 - Postgres Migrations and Seed Support
 - Basic request parameters Validation
-- Open Api Specification implemented through swagger and swagger-ui
+- Open API Specification implemented through swagger and swagger-ui
 - JWT implementation
 - Environment variables to hold configuration values `.env` file
 - Functional Programming with Middlewares and helpers
@@ -71,9 +72,9 @@
 
 ### How to use it
 
-This code is meant to be run in a server accesible online, so other services can use it. This is a Rest Api solution using basic database create, read, update and delete operations (CRUD) as well as a basic token (JWT) generator/validator.
+This code is meant to be run in a server accesible online, so other services can use it. This is a Rest API solution using basic database create, read, update and delete operations (CRUD) as well as a basic token (JWT) generator/validator.
 
-It uses a RESTful API to be used by any other client, but for human readability it also have `swagger` (it can even be used as an ad hoc admin panel!). To use it from a client you need to make HTPP(S) requests, for example using `curl`:
+It uses a RESTful API to be used by any other client, but for human readability it also have `swagger` (it can even be used as an ad hoc admin panel!). To use it from a client you need to make HTTP(S) requests, for example using `curl`:
 
 ```sh
 > curl http://localhost:8000/ping -v
@@ -86,21 +87,15 @@ But you can use any language or library: PHP, GO, C++, Rust, etc. The only uniqu
 
 Before to start you need have some requirements:
 
-1. [Node.js](https://nodejs.org/) > v16.13.2
 
-   Node.js is a runtime environment for Javascript that allows us to use the language outside of the browser, in this case we use it to configure and run the development server.
-
-2. [npm](https://www.npmjs.com/) > v8.1.2
-
-   npm is a package manager for Node.js and comes installed with it, we use it to install and manage application dependencies.
-
-3. [Git](https://git-scm.com/) > v2.0.0
-
-   Git is a version control system for code, we use it to manage the different branches of the code.
-
-4. Connection to internet
-
-5. [Visual Studio Code](https://code.visualstudio.com/) or another code editor (optional)
+| Requisito      | Descripción           |
+| -------------- | -------------- |
+|[Node.js](https://nodejs.org/en/) > v16.13.2    | Runtime environment for Javascript that allows us to use the language outside of the browser, in this case we use it to configure and run the development server.  |
+|[NPM](https://www.npmjs.com/) > v8.1.2   | Package manager for Node.js and comes installed with it, we use it to install and manage application dependencies.|
+|[Git](https://git-scm.com/) > v2.0.0  | Version control system for code, we use it to manage the different branches of the code.
+   |
+|Conexión a internet | |
+|[Visual Studio Code](https://code.visualstudio.com/) | Code editor (another code editor can be used) |
 
 ### Installation
 
@@ -108,7 +103,7 @@ To get the Node server running locally:
 
 - Clone this repo
 - `npm install` to install all required dependencies
-- `npm run dev` or `npm run dev:dash` (with GUI-like experience on your terminal) to start the local server
+- `npm run dev` (with GUI-like experience on your terminal) to start the local server
 
 ### Set Environments
 
@@ -127,13 +122,13 @@ Check unused, outdated states of dependencies: `npx depcheck # OR npx npm-check-
 
 ## Code Overview
 
-This backend's code is made using JavaScript language, and [Node.js](nodejs.org) runtime. With a package named Express.js to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level. Typing and compile correctness by Typescript.
+This backend's code is made using JavaScript language, and Node.js runtime. With a package named Express.js to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level. Typing and compile correctness by Typescript.
 
-As with most of node.js applications, we would want to install node and npm in our local PC in order to run the server or develop code. This folder include all the necessary files to run the server local or online, just take into account that you'll need to use a terminal as no GUI is available yet.
+As with most of Node.js applications, we would want to install Node and npm in our local PC in order to run the server or develop code. This folder include all the necessary files to run the server local or online, just take into account that you'll need to use a terminal as no GUI is available yet.
 
 If you want to develop you have to setup a good dev environment. First of all a good text editor/IDE, I prefer to use Visual Studio Code, but you can use anything else. For the use of VSCode I provide configuration files in the hidden folder `.vscode`.
 
-For more information about the code please check the [code overview](docs/CODE_OVERVIEW.md).
+For more information about the code please check the [code overview](docs/en/CODE_OVERVIEW.md).
 
 ## Dependencies
 
@@ -170,27 +165,30 @@ Requests are authenticated using the `Authorization` header with a valid JWT. We
 |          ![emmanuel-pic][]          |                                                                                                                                     |
 |   [Angelica Molina][ange-github]    |![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                                                   |
 |            ![ange-pic][]            |                                                                                                                                     |
+|    [denis Osuna][denis-github]     | ![email-icon][] Email me to [denisosuna@gmail.com][denis-email] / ![linkedin-icon][] Connect to [my LinkedIn][denis-linkedin]  |
+|           ![denis-pic][]   
 
 ## References and kudos
 
 ### Used:
-https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0
-https://github.com/nfour/eslint-config-standard-typescript-prettier
-https://codeql.github.com/
-https://github.com/santoshshinde2012/node-boilerplate
-https://medium.com/@tadeaspetak/frontend-fullstack-security-298154016374
-https://github.com/PW486/express-ts-starter // Have docker conf
+
+- https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0
+- https://github.com/nfour/eslint-config-standard-typescript-prettier
+- https://codeql.github.com/
+- https://github.com/santoshshinde2012/node-boilerplate
 
 
 ### Ideas
 
-https://github.com/MichielDeMey/express-jwt-permissions
-https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
-https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
-https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
-https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
-https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
-https://caddyserver.com/docs/running
+
+- https://github.com/MichielDeMey/express-jwt-permissions
+- https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/
+- https://siddharthac6.medium.com/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e
+- https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html
+- https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
+- https://github.com/cham11ng/typescript-api-starter // Have migrations with Postgres
+- https://caddyserver.com/docs/running
+- https://github.com/PW486/express-ts-starter // Have docker conf
 
 
 ## Contributing
@@ -252,5 +250,6 @@ Feel free to fork this project and improve it
 [ange-pic]: https://avatars.githubusercontent.com/u/4030477?s=200&v=4
 [ange-email]: mailto:angeli.molina1@gmail.com
 [denis-github]: https://github.com/denisosuna
+[denis-linkedin]: https://www.linkedin.com/in/denisosuna
 [denis-pic]: https://avatars.githubusercontent.com/u/21060798?v=4
 [denis-email]: denisosuna@gmail.com

@@ -59,7 +59,7 @@ function foo() {
 
 ## Braces
 
-We use egyptian braces. Also, braces are required in every block elements, even if they are oneliners (if, while, do...while, try...catch...finally, etc...)
+We use Egyptian braces. Also, braces are required in every block elements, even if they are oneliners (if, while, do...while, try...catch...finally, etc...)
 
 // do this
 async function foo() {

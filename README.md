@@ -6,6 +6,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Code Size][code-size-shield]][code-size-shield]
 
+
 <!-- PROJECT LOGO -->
 |                                        express-production-template                                       |
 | :--------------------------------------------------------------------------------: |
@@ -178,6 +179,7 @@ Requests are authenticated using the `Authorization` header with a valid JWT. We
 
 
 ### Ideas
+
 
 - https://github.com/MichielDeMey/express-jwt-permissions
 - https://www.medianova.com/en-blog/nodejs-exprees-for-jwt-auth-example/

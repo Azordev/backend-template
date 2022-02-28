@@ -39,6 +39,7 @@
     "urlencode",
     "validador",
     "wiston"
+
   ],
   "flagWords": [
     "hte"
@@ -61,5 +62,6 @@
   ],
   "import": [
     "@cspell/dict-es-es/cspell-ext.json"
+
   ]
 }

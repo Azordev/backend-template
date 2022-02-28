@@ -38,8 +38,8 @@ Entonces, ¿quieres sentir el metal e instalar cosas (como una carpeta pesada `n
 
 ### Requisitos previos
 
-- [ ] `Npm` v8.1 +
-- [ ] `Nodo` v16.13 +
+- [ ] `NPM` v8.1 +
+- [ ] `Node` v16.13 +
 - [ ] Una buena terminal
 - [ ] Un editor de texto como VSCode
 - [ ] Un navegador como Firefox o Chrome, o un cliente como Postman/Insomnia para probar
@@ -51,6 +51,15 @@ Entonces, ¿quieres sentir el metal e instalar cosas (como una carpeta pesada `n
 # or
 > yarn install
 ```
+
+Generar llave ssh
+
+En el directorio raiz de proyecto aplicar los siguiente comandos
+
+> chmod +x .create_keys.sh 
+>  sh .create_keys.sh 
+
+Luego de esto presionar enter para no agregar palabra clave o colocar una.
 
 Ahora debería tener todas las carpetas y archivos para ejecutar el servidor, el único problema es que necesitamos una base de datos que funcione. Con ese fin, exploremos 2 formas diferentes.
 

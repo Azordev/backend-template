@@ -37,9 +37,9 @@ Las solicitudes se autentican mediante el encabezado "Autorización" con un JWT 
 
 ## Bases de datos
 
-Decidí usar Postgres como mi base de datos, ya que es una opción moderna, potente y de código abierto. Tampoco uso un ORM, ya que generalmente no lo necesitamos si conocemos alguna compilación de consulta SQL (o podemos usar Google).
+Decidimos usar Postgres como base de datos para el proyecto, ya que es una opción moderna, potente y de código abierto. Tampoco uso un ORM, ya que generalmente no lo necesitamos si conocemos alguna compilación de consulta SQL (o podemos usar Google).
 
-Definí algunas migraciones para iniciar un nuevo servidor, puede usarlo ejecutando `npm run set-db:dev` y hacer que se ejecuten las migraciones y la semilla.
+Definimos algunas migraciones para iniciar un nuevo servidor, puede usarlo ejecutando `npm run set-db:dev` y hacer que se ejecuten las migraciones y la semilla.
 
 Para bases de datos, recomiendo usar Heroku Free Tier. Si desea verificar los cambios en las bases de datos, le recomiendo [pgweb] (https://pgweb-demo.herokuapp.com/).
 

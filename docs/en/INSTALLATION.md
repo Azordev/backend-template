@@ -39,7 +39,7 @@ So you want to feel the metal and install stuff (like a `node_modules` heavy fol
 
 ### Pre Requisites
 
-- [ ] `Npm` v8.1 +
+- [ ] `NPM` v8.1 +
 - [ ] `Node` v16.13 +
 - [ ] A good terminal
 - [ ] A Text Editor like VSCode
@@ -52,6 +52,14 @@ So you want to feel the metal and install stuff (like a `node_modules` heavy fol
 # or
 > yarn install
 ```
+Generate ssh key
+
+In the project root directory apply the following commands
+
+> chmod +x .create_keys.sh
+> sh .create_keys.sh
+
+After this, press enter to not add a keyword or place one.
 
 Now you should have all the folders and files to run the server, the only problem is that we need a database working. To that end lets explore 2 different ways.
 

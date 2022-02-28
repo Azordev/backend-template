@@ -122,7 +122,7 @@ Check unused, outdated states of dependencies: `npx depcheck # OR npx npm-check-
 
 ## Code Overview
 
-This backend's code is made using JavaScript language, and nodejs.org runtime. With a package named Express.js to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level. Typing and compile correctness by Typescript.
+This backend's code is made using JavaScript language, and Node.js runtime. With a package named Express.js to create the server, routers and middleware necessary. Also PostgreSQL is used to provide a modern, open sourced and performant database layer. Lastly, the server have auxiliar packages for development and deployment to ensure is production ready, enterprise level. Typing and compile correctness by Typescript.
 
 As with most of Node.js applications, we would want to install Node and npm in our local PC in order to run the server or develop code. This folder include all the necessary files to run the server local or online, just take into account that you'll need to use a terminal as no GUI is available yet.
 

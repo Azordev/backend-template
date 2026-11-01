@@ -41,7 +41,7 @@
     "morgan": "~1.10.0",
     "pg": "~8.7.3",
     "reflect-metadata": "~0.1.13",
-    "response-time": "~2.3.2",
+    "response-time": "~2.3.4",
     "typeorm": "~0.2.41",
     "winston": "~3.5.1"
   },
